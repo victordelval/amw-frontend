@@ -13,6 +13,5 @@ and then start the dev server:
 
 ```bash
 yarn dev
-# or
 ```
 
