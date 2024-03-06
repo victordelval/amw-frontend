@@ -1,0 +1,9 @@
+.loader {
+  text-align: center;
+}
+.loader .content {
+  margin-top: 20%;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  font-size: 30px;
+}

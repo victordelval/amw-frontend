@@ -1,0 +1,84 @@
+.nav {
+  position: fixed;
+  background: #70bc94;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 28px;
+  text-align: right;
+}
+.nav .menu-link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: inline-block;
+  letter-spacing: 1px;
+  line-height: 2.3;
+  padding: 0 15px;
+  transition: background-color 0.4s cubic-bezier(0.5, 0, 0.2, 1);
+}
+.nav .menu-link:hover {
+  background: rgb(25, 170, 86);
+}
+.nav .menu-link-last {
+  margin-right: 20px;
+}
+.amw-logo {
+  position: fixed;
+  top: 30px;
+  left: 10px;
+  z-index: 1000;
+  display: block;
+}
+.amw-logo img {
+  width: 130px;
+}
+@media (max-width: 700px) {
+  .amw-logo img {
+    width: 90px;
+  }
+}
+.main-menu {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+@media (max-width: 800px) {
+  .main-menu {
+    font-size: 40px;
+  }
+}
+.main-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.4s cubic-bezier(0.5, 0, 0.2, 1);
+}
+.main-menu a:hover {
+  color: rgb(30, 195, 99);
+  text-decoration: none;
+}
+.menu-lang {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 12px;
+}
+.menu-lang:hover {
+  opacity: 0.5;
+}
+.divider {
+  color: #fff;
+  display: inline-block;
+}
+.nav .overlay {
+  top: 28px;
+}
+.lang-menu {
+  list-style-type: none;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
