@@ -1,5 +1,5 @@
 ## Amazon Mining Watch
-This is the frontend to Amazon Mining Watch built on [Next.js](https://nextjs.org/) and [react-map-gl](https://visgl.github.io/react-map-gl/).
+This is the frontend to Amazon Mining Watch built on [Next.js](https://nextjs.org/) and [react-map-gl](https://visgl.github.io/react-map-gl/). It uses Next's native i18n support and App Router.
 
 ## Content management 
 Content is pulled from markdown files in `./markdown`.
