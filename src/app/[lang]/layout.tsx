@@ -2,7 +2,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { i18n, type Locale } from "../../../i18n-config";
 import MainMap from "./components/Map";
 import Nav from "./components/Nav";
-import { getDictionary } from "../../../get-dictionary";
+import { getDictionary } from "../../get-dictionary";
 import { MenuProvider } from "./menuContext";
 import Loader from "./components/Loader";
 import "./globals.css";

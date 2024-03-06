@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { i18n, type Locale } from "../../../../i18n-config";
-import { getDictionary } from "../../../../get-dictionary";
+import { getDictionary } from "../../../get-dictionary";
 
 export const metadata: Metadata = {
   title: "Data and Code - Amazon Mining Watch",

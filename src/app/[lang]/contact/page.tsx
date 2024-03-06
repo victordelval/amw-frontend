@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import { i18n, type Locale } from "../../../../i18n-config";
 import Overlay from "../components/Overlay";
-import { getDictionary } from "../../../../get-dictionary";
-import { getMarkdown } from "../../../../get-markdown";
+import { getDictionary } from "../../../get-dictionary";
+import { getMarkdown } from "../../../get-markdown";
 import { marked } from "marked";
 
 interface PageProps {
