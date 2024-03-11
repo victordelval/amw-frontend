@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
   if (
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/api/") ||
-    pathname.match(/\.(jpg|jpeg|png|gif|ico|svg|css|js)$/)
+    pathname.match(/\.(jpg|jpeg|png|gif|ico|geojson|json|svg|css|js)$/)
   ) {
     //console.log('Path is for static asset or API route. Skipping locale redirection.');
     return NextResponse.next();

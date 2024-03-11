@@ -2,12 +2,11 @@
 import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { message } from 'antd';
+import { message, Button, Radio } from 'antd';
 import Map, { Layer, Source, Popup  } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
 import Area from "../Area";
-import geojson from "../../data/amazon_basin.json";
 import MiniMap from "../MiniMap";
 import { convertBoundsToGeoJSON } from "./helpers";
 import { CopyOutlined } from "@ant-design/icons";
@@ -25,6 +24,19 @@ const MainMap = () => {
   const [areaVisible, setAreaVisible] = useState(true);
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState();
+  const [mapStyle, setMapStyle] = useState('mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30')
+
+
+  const options = [
+    {
+      label: 'Latest',
+      value: 'https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg',
+    },
+    {
+      label: 'Hi-res',
+      value: 'mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30',
+    }
+  ]
 
   useEffect(() => {
     if (window.location.hash) {
@@ -92,7 +104,7 @@ const MainMap = () => {
           width: "100hw",
           height: "100vh",
         }}
-        mapStyle="mapbox://styles/dmccarey/clsz6tmx301eq01p4bz5k46rr"
+        mapStyle={mapStyle}
         onMove={(e) => {
           if (map) {
             /* @ts-ignore */
@@ -130,6 +142,24 @@ const MainMap = () => {
           });
         }}
       >
+
+        <Source
+          id={"hole-source"}
+          type="vector"
+          url="mapbox://dmccarey.3pur462h"
+        />
+
+        <Layer 
+          id={"hole-layer"}
+          source={"hole-source"}
+          source-layer={'amazon-hole-0asofs'}
+          type="fill"
+          paint={{
+            "fill-color": "#ffffff",
+            "fill-opacity": 0.8
+          }}
+        />
+              
         <Source
           id={"mines-source"}
           type="geojson"
@@ -149,6 +179,8 @@ const MainMap = () => {
             "line-width": 1,
           }}
         />
+
+
         {popupInfo && (
           <Popup
             longitude={popupInfo?.longitude}
@@ -185,6 +217,20 @@ const MainMap = () => {
           </Popup>
         )}
       </Map>
+
+      <div className="imagery-pills">
+      <Radio.Group 
+        size="small"
+        options={options} 
+        value={mapStyle}
+        onChange={({ target: { value } }) => {
+          setMapStyle(value);
+        }}
+        optionType="button" 
+        buttonStyle="solid"
+      />
+      </div>
+
       {areaVisible && <Area />}
       {/* @ts-ignore */}
       {map && map.getZoom() > 5 && (

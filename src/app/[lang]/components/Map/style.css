@@ -70,3 +70,33 @@
   z-index: 100;
   font-size: 11px;
 }
+.imagery-pills {
+  position: fixed;
+  width: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  z-index: 1000;
+}
+.imagery-pills .ant-radio-button-wrapper {
+  padding-inline: 20px !important;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.imagery-pills .ant-radio-button-wrapper {
+  background: rgb(11, 95, 58) !important;
+  color: #fff;
+  border: none !important;
+}
+.imagery-pills .ant-radio-button-wrapper:hover {
+  color: #fff;
+}
+.imagery-pills .ant-radio-button-wrapper-checked {
+  background: rgba(34, 181, 115, 1) !important;
+  border: none !important;
+}
+.imagery-pills .ant-radio-button-wrapper-checked::before {
+  width: 0px !important;
+}
