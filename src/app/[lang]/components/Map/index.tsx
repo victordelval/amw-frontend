@@ -2,7 +2,8 @@
 import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Map, { Layer, Source, Popup } from "react-map-gl";
+import { message } from 'antd';
+import Map, { Layer, Source, Popup  } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
 import Area from "../Area";
@@ -15,6 +16,7 @@ const MainMap = () => {
   const [popupInfo, setPopupInfo] = useState<{
     latitude: number;
     longitude: number;
+    zoom: number;
   } | null>(null);
   const pathname = usePathname();
   const { menuOpen, setMenuOpen } = useMenu();
@@ -53,6 +55,15 @@ const MainMap = () => {
       undefined,
     );
   };
+
+  const copyToClipboard = async (text: string): Promise<void> => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Text copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
 
   return (
     <div
@@ -109,11 +120,13 @@ const MainMap = () => {
         onClick={(e) => {
           const { lngLat } = e;
           console.log(e);
+          const map = e.target;
           setPopupInfo({
             /* @ts-ignore */
             latitude: lngLat.lat,
             /* @ts-ignore */
             longitude: lngLat.lng,
+            zoom: map.getZoom()
           });
         }}
       >
@@ -158,8 +171,12 @@ const MainMap = () => {
            
             <a
               className="copy-url"
-              onClick={(e) => {
+              onClick={async(e) => {
                 e.preventDefault();
+                copyToClipboard(`${process.env.NEXT_PUBLIC_DOMAIN}/#${popupInfo.zoom.toFixed(2)}/${popupInfo.longitude.toFixed(3)}/${ popupInfo?.latitude.toFixed(3)}`)
+                .then(() => {
+                  message.success('URL copied')
+                });
               }}
               href="#copy"
             >
