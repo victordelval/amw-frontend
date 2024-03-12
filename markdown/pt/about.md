@@ -1,4 +1,4 @@
-# About 
+# Sobre
 
 O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network (RIN) do Pulitzer Center e a Earthrise Media. Essas duas organizações sem fins lucrativos uniram forças para trazer juntas o poder da inteligência artificial e do jornalismo investigativo e elucidar problemas ambientais de grande escala na Amazônia.
 
@@ -6,6 +6,13 @@ Todos os dados publicados neste site estão disponíveis para download. Nossa es
 
 A versão beta da plataforma foi lançada em abril de 2022 e nosso objetivo é continuar desenvolvendo recursos e capacidades analíticas, trazendo entendimento sobre o estado atual da mineração na região amazônica.
 
+*Estes são alguns casos em que a máquina pode identificar incorretamente as áreas de mineração.  Aqui exemplos de detecções erradas*
+
+![not-mines](/images/not-mines.png)
+
 A RIN foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical:  a Amazônia,  a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
+
+![recent](/images/img-1.jpg)
+![hi-res](/images/img-2.jpg)
 
 A Earthrise Media é uma agência sem fins lucrativos que ajuda comunicadores e ativistas do mundo todo a usar imagens de satélite e inteligência geoespacial em suas histórias e campanhas. A organização vem analisando vários casos de mineração ilegal no Brasil e na Venezuela e, por meio dessa parceria com a RIN, está expandindo seu modelo para toda a região amazônica.

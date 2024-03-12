@@ -15,6 +15,7 @@
     "@types/js-cookie": "^3.0.6",
     "antd": "^5.14.1",
     "cookie": "^0.6.0",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
     "js-cookie": "^3.0.5",
     "mapbox-gl": "^3.1.2",

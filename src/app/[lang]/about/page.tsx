@@ -14,7 +14,7 @@ interface PageProps {
 const Page: NextPage<PageProps> = async ({ params: { lang } }) => {
   const dictionary = await getDictionary(lang);
   const content = await getMarkdown(lang, `${lang}/about.md`);
-
+  console.log(content.data)
   const getMarkdownText = (content: string) => {
     const rawMarkup = marked.parse(content);
     {
