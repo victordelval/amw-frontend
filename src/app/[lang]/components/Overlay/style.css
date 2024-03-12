@@ -42,8 +42,32 @@
 .overlay .content p a:hover {
   text-decoration: underline;
 }
-
 .overlay .content img {
   width: 120%;
   margin-left: -20%;
+}
+
+.case-study-images {
+  position: absolute;
+  left: -68%;
+  top: 170px;
+  width: 50%;
+}
+.case-study-images img {
+  margin-bottom: -20px;
+}
+.case-study-images .image-1 {
+  transform: rotate(3deg)
+}
+.case-study-images .image-2 {
+  transform: rotate(-4deg)
+}
+.case-study-images .image-3 {
+  transform: rotate(5deg)
+}
+.case-study-images .image-4 {
+  transform: rotate(-2deg)
+}
+.case-study-images .image-5 {
+  transform: rotate(3deg)
 }

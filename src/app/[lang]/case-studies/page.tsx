@@ -25,6 +25,11 @@ const Page: NextPage<PageProps> = async ({ params: { lang } }) => {
 
   return (
     <Overlay>
+      <div className="case-study-images">
+      { content.data.images.map((image: string, index: number) => 
+        <img className={`image-${index+1}`} src={`/images/${image}`} />
+      )}
+      </div>
       {/* @ts-ignore */}
       <div dangerouslySetInnerHTML={getMarkdownText(content.content)} />
     </Overlay>

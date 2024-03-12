@@ -1,3 +1,12 @@
+---
+images:
+  - case-study-1.jpg
+  - case-study-2.jpg
+  - case-study-3.jpg
+  - case-study-4.jpg
+  - case-study-5.jpg
+---
+
 # Case Studies
 
 This work grew out of a series of collaborations with journalists and with activists seeking to expose illegal gold-mining activity and document its impacts on the environment and on local Indigenous communities.

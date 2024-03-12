@@ -18,3 +18,14 @@ h5 {
 h1 {
   font-size: 60px;
 }
+
+
+.case-study-images {
+  position: absolute;
+  left: -60%;
+  top: 300px;
+  width: 50%;
+}
+.case-study-images img {
+  margin-bottom: 20px;
+}
