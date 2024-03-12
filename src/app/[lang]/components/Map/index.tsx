@@ -17,6 +17,7 @@ const MainMap = () => {
     longitude: number;
     zoom: number;
   } | null>(null);
+  const [popupVisible, setPopupVisible] = useState(false);
   const pathname = usePathname();
   const { menuOpen, setMenuOpen } = useMenu();
   const router = useRouter();
@@ -131,8 +132,8 @@ const MainMap = () => {
         }}
         onClick={(e) => {
           const { lngLat } = e;
-          console.log(e);
           const map = e.target;
+          popupVisible ? setPopupVisible(false) : setPopupVisible(true);
           setPopupInfo({
             /* @ts-ignore */
             latitude: lngLat.lat,
@@ -181,7 +182,7 @@ const MainMap = () => {
         />
 
 
-        {popupInfo && (
+        {popupVisible && popupInfo && (
           <Popup
             longitude={popupInfo?.longitude}
             latitude={popupInfo?.latitude}
