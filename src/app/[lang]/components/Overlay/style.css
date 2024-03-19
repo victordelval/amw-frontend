@@ -53,6 +53,11 @@
   top: 170px;
   width: 50%;
 }
+@media(max-width: 600px) {
+  .case-study-images {
+    display: none;
+  }
+}
 .case-study-images img {
   margin-bottom: -20px;
 }

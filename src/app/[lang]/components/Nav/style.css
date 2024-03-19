@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  background: #70bc94;
+  background: rgba(34, 181, 115, 0.7);
   left: 0;
   top: 0;
   width: 100%;
@@ -27,15 +27,21 @@
 }
 .amw-logo {
   position: fixed;
-  top: 30px;
+  top: 25px;
   left: 10px;
   z-index: 1000;
   display: block;
 }
-.amw-logo img {
-  width: 130px;
+@media (max-width: 900px) {
+  .amw-logo {
+    top: 0px;
+  }
 }
-@media (max-width: 700px) {
+.amw-logo img {
+  width: 200px;
+  height: 150px;
+}
+@media (max-width: 900px) {
   .amw-logo img {
     width: 90px;
   }

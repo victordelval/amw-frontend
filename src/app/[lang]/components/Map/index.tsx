@@ -2,7 +2,7 @@
 import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { message, Button, Radio } from 'antd';
+import { message, Button, Radio, Slider } from 'antd';
 import Map, { Layer, Source, Popup  } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
@@ -25,19 +25,8 @@ const MainMap = () => {
   const [areaVisible, setAreaVisible] = useState(true);
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState();
-  const [mapStyle, setMapStyle] = useState('mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30')
-
-
-  const options = [
-    {
-      label: 'Latest',
-      value: 'https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg',
-    },
-    {
-      label: 'Hi-res',
-      value: 'mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30',
-    }
-  ]
+  const [mapStyle, setMapStyle] = useState('mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30');
+  const [activeLayer, setActiveLayer] = useState('mines-layer-2023');
 
   useEffect(() => {
     if (window.location.hash) {
@@ -76,6 +65,22 @@ const MainMap = () => {
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
+  }
+
+  const isVisible = (layerId: string) => {
+    /*
+    if (layerId === activeLayer) {
+      return 'visible';
+    }
+    */
+    return 'visible';
+  }
+
+  const getOpacity = (layerId: string) => {
+    if (layerId === activeLayer) {
+      return 1;
+    }
+    return 0;
   }
 
   return (
@@ -162,25 +167,145 @@ const MainMap = () => {
         />
               
         <Source
-          id={"mines-source"}
+          id={"mines-2023"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/44px_v2.9/mining_amazon_all_unified_thresh_0.8_v44px_v2.6-2.9_2020-01-01_2021-02-01_period_4_method_median.geojson`}
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2023-01-01_2023-12-31-dissolved-0.6.geojson`}
         />
+
+        <Source
+          id={"mines-2022"}
+          type="geojson"
+          tolerance={0.05}
+          // @ts-ignore
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2022-01-01_2022-12-31-dissolved-0.6.geojson`}
+        />
+
+        <Source
+          id={"mines-2021"}
+          type="geojson"
+          tolerance={0.05}
+          // @ts-ignore
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2021-01-01_2021-12-31-dissolved-0.6.geojson`}
+        />
+
+        <Source
+          id={"mines-2020"}
+          type="geojson"
+          tolerance={0.05}
+          // @ts-ignore
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2020-01-01_2020-12-31-dissolved-0.6.geojson`}
+        />
+
+        <Source
+          id={"mines-2019"}
+          type="geojson"
+          tolerance={0.05}
+          // @ts-ignore
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2019-01-01_2019-12-31-dissolved-0.6.geojson`}
+        />
+
+        <Source
+          id={"mines-2018"}
+          type="geojson"
+          tolerance={0.05}
+          // @ts-ignore
+          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2018-01-01_2018-12-31-dissolved-0.6.geojson`}
+        />  `   `   
+
 
         {/* @ts-ignore */}
         <Layer
-          id={"mines-layer"}
-          source={"mines-source"}
+          id={"mines-layer-2023"}
+          source={"mines-2023"}
           type="line"
+          layout={{
+           // visibility: isVisible('mines-layer-2023')
+          }}
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": 1.0,
+            "line-opacity": getOpacity('mines-layer-2023'),
             "line-width": 1,
           }}
         />
 
+        {/* @ts-ignore */}
+        <Layer
+          id={"mines-layer-2022"}
+          source={"mines-2022"}
+          type="line"
+          layout={{
+           // visibility: isVisible('mines-layer-2022')
+          }}
+          paint={{
+            "line-color": "#ffb301",
+            "line-opacity": getOpacity('mines-layer-2022'),
+            "line-width": 1,
+          }}
+        />
+
+        {/* @ts-ignore */}
+        <Layer
+          id={"mines-layer-2021"}
+          source={"mines-2021"}
+          type="line"
+          layout={{
+           // visibility: isVisible('mines-layer-2021')
+          }}
+          paint={{
+            "line-color": "#ffb301",
+            "line-opacity": getOpacity('mines-layer-2021'),
+            "line-width": 1,
+          }}
+        />
+
+
+        {/* @ts-ignore */}
+        <Layer
+          id={"mines-layer-2020"}
+          source={"mines-2020"}
+          type="line"
+          layout={{
+          //  visibility: isVisible('mines-layer-2020')
+          }}
+          paint={{
+            "line-color": "#ffb301",
+            "line-opacity": getOpacity('mines-layer-2020'),
+            "line-width": 1,
+          }}
+        />
+
+         {/* @ts-ignore */}
+         <Layer
+          id={"mines-layer-2019"}
+          source={"mines-2019"}
+          type="line"
+          layout={{
+          //  visibility: isVisible('mines-layer-2019')
+          }}
+          paint={{
+            "line-color": "#ffb301",
+            "line-opacity": getOpacity('mines-layer-2019'),
+            "line-width": 1,
+          }}
+        />
+
+
+         {/* @ts-ignore */}
+         <Layer
+          id={"mines-layer-2018"}
+          source={"mines-2018"}
+          type="line"
+          layout={{
+          //  visibility: isVisible('mines-layer-2018')
+          }}
+          paint={{
+            "line-color": "#ffb301",
+            "line-opacity": getOpacity('mines-layer-2018'),
+            "line-width": 1,
+          }}
+        />
 
         {popupVisible && popupInfo && (
           <Popup
@@ -219,10 +344,60 @@ const MainMap = () => {
         )}
       </Map>
 
+      <div className="year-pills">
+        
+   
+      <Radio.Group 
+   
+        options={[
+          {
+            label: '2023',
+            value: 'mines-layer-2023',
+          },
+          {
+            label: '2022',
+            value: 'mines-layer-2022',
+          },
+          {
+            label: '2021',
+            value: 'mines-layer-2021',
+          },
+          {
+            label: '2020',
+            value: 'mines-layer-2020',
+          },
+          {
+            label: '2019',
+            value: 'mines-layer-2019',
+          },
+          {
+            label: '2018',
+            value: 'mines-layer-2018',
+          }
+        ]} 
+        value={activeLayer}
+        onChange={({ target: { value } }) => {
+          setActiveLayer(value);
+        }}
+        optionType="button" 
+        buttonStyle="solid"
+      />
+    
+      </div>
+
       <div className="imagery-pills">
       <Radio.Group 
         size="small"
-        options={options} 
+        options={[
+          {
+            label: 'Latest',
+            value: 'https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg',
+          },
+          {
+            label: 'Hi-res',
+            value: 'mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30',
+          }
+        ]} 
         value={mapStyle}
         onChange={({ target: { value } }) => {
           setMapStyle(value);

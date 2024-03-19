@@ -80,23 +80,50 @@
   bottom: 50px;
   z-index: 1000;
 }
+.year-pills .ant-radio-button-wrapper,
 .imagery-pills .ant-radio-button-wrapper {
   padding-inline: 20px !important;
   text-transform: uppercase;
   font-size: 12px;
 }
+.year-pills .ant-radio-button-wrapper,
 .imagery-pills .ant-radio-button-wrapper {
   background: rgb(11, 95, 58) !important;
   color: #fff;
   border: none !important;
 }
+.year-pills .ant-radio-button-wrapper:hover,
 .imagery-pills .ant-radio-button-wrapper:hover {
   color: #fff;
+  opacity: 0.9;
 }
+.year-pills .ant-radio-button-wrapper-checked,
 .imagery-pills .ant-radio-button-wrapper-checked {
   background: rgba(34, 181, 115, 1) !important;
   border: none !important;
 }
+.year-pills ant-radio-button-wrapper-checked::before,
 .imagery-pills .ant-radio-button-wrapper-checked::before {
   width: 0px !important;
+}
+.year-pills .ant-radio-button-wrapper-checked::before {
+  background: none !important;
+}
+.year-pills .ant-radio-button-wrapper:not(:first-child)::before {
+  background: none !important;
+}
+.year-pills {
+  position: fixed;
+  width: 415px;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  top: 50px;
+  z-index: 1000;
+}
+@media(max-width: 600px) {
+  .year-pills {
+    top: 120px;
+  }
 }
