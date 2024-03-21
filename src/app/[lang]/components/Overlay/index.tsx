@@ -12,7 +12,7 @@ const Overlay: React.FC<OverlayProps> = (props) => {
     <div 
       className="overlay"
       style={{
-        background: opacity === 1 ? `#003e36` : `rgba(0, 54, 56, 0.9)`
+        background: opacity === 1 ? `#003e36` : `rgba(0, 62, 54, 0.9)`
       }}
     >
       <div className="content">{children}</div>

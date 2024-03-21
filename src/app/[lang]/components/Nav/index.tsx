@@ -21,6 +21,8 @@ const Nav: React.FC<NavProps> = ({ children }) => {
   const { setMenuOpen } = useMenu();
   const menuRef = useRef(null); // Ref for the menu to animate
 
+
+
   useEffect(() => {
     if (animate === 'in') {
       gsap.from('li', {
@@ -98,7 +100,9 @@ const Nav: React.FC<NavProps> = ({ children }) => {
         <Image src={Logo} />
       </Link>
       {showMenu && (
-        <Overlay>
+        <Overlay
+        opacity={1}
+        >
           <div className="main-menu">
 
            <div>
