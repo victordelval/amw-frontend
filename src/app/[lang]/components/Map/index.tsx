@@ -351,28 +351,28 @@ const MainMap = () => {
    
         options={[
           {
-            label: '2023',
-            value: 'mines-layer-2023',
-          },
-          {
-            label: '2022',
-            value: 'mines-layer-2022',
-          },
-          {
-            label: '2021',
-            value: 'mines-layer-2021',
-          },
-          {
-            label: '2020',
-            value: 'mines-layer-2020',
+            label: '2018',
+            value: 'mines-layer-2018',
           },
           {
             label: '2019',
             value: 'mines-layer-2019',
           },
           {
-            label: '2018',
-            value: 'mines-layer-2018',
+            label: '2020',
+            value: 'mines-layer-2020',
+          },
+          {
+            label: '2021',
+            value: 'mines-layer-2021',
+          },
+          {
+            label: '2022',
+            value: 'mines-layer-2022',
+          },
+          {
+            label: '2023',
+            value: 'mines-layer-2023',
           }
         ]} 
         value={activeLayer}

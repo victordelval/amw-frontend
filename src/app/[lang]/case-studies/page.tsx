@@ -27,7 +27,7 @@ const Page: NextPage<PageProps> = async ({ params: { lang } }) => {
     <Overlay>
       <div className="case-study-images">
       { content.data.images.map((image: string, index: number) => 
-        <img className={`image-${index+1}`} src={`/images/${image}`} />
+        <img key={index+1} className={`image-${index+1}`} src={`/images/${image}`} />
       )}
       </div>
       {/* @ts-ignore */}
