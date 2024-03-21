@@ -1,5 +1,5 @@
-"use client";
-import React, { ReactNode, useState, useEffect } from "react";
+'use client';
+import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "./logo.svg";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import Overlay from "../Overlay";
 import { useMenu } from "../../menuContext";
 import { Tween } from "react-gsap";
+import gsap from "gsap";
 import "./style.css";
 
 interface NavProps {
@@ -16,7 +17,35 @@ interface NavProps {
 const Nav: React.FC<NavProps> = ({ children }) => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
-  const { menuOpen, setMenuOpen } = useMenu();
+  const [animate, setAnimate] = useState('');
+  const { setMenuOpen } = useMenu();
+  const menuRef = useRef(null); // Ref for the menu to animate
+
+  useEffect(() => {
+    if (animate === 'in') {
+      gsap.from('li', {
+        xPercent: 130,
+        stagger: 0.07
+      });
+      gsap.to('li', {
+        xPercent: 0,
+        duration: 0.8,
+        stagger: 0.07,
+        ease: "back.in(1.4)",
+      });
+    } else {
+      gsap.from('li', {
+        xPercent: 0,
+        stagger: 0.07
+      });
+      gsap.to('li', {
+        xPercent: 130,
+        duration: 0.8,
+        stagger: 0.07,
+        ease: "back.out(1.4)",
+      });
+    }
+  }, [animate]);
 
   return (
     <div className="nav">
@@ -48,8 +77,10 @@ const Nav: React.FC<NavProps> = ({ children }) => {
         href="#menu"
         onClick={(e) => {
           e.preventDefault();
-          showMenu ? setShowMenu(false) : setShowMenu(true);
           showMenu ? setMenuOpen(false) : setMenuOpen(true);
+          showMenu ? setShowMenu(false) : setShowMenu(true);
+          showMenu ? setAnimate('out') : setAnimate('in')
+         
         }}
       >
         Menu
@@ -69,12 +100,17 @@ const Nav: React.FC<NavProps> = ({ children }) => {
       {showMenu && (
         <Overlay>
           <div className="main-menu">
+
+           <div>
             <ul
+             ref={menuRef}
               onClick={() => {
+                setMenuOpen(false);
+                setAnimate('out')
                 setTimeout(() => {
                   setShowMenu(false);
-                }, 100);
-                setMenuOpen(false);
+                },800);
+                
               }}
               style={{
                 listStyleType: "none",
@@ -82,13 +118,7 @@ const Nav: React.FC<NavProps> = ({ children }) => {
                 margin: "20px 0",
               }}
             >
-              <Tween
-                from={{ xPercent: 130 }}
-                to={{ xPercent: 0 }}
-                duration={0.8}
-                stagger={0.07}
-                ease="back.out(1.4)"
-              >
+              
                 <li>
                   <Link href="/">Map</Link>
                 </li>
@@ -107,7 +137,7 @@ const Nav: React.FC<NavProps> = ({ children }) => {
                 <li>
                   <Link href="/contact">Contact</Link>
                 </li>
-              </Tween>
+             
             </ul>
             <ul className="lang-menu">
               <li>
@@ -120,6 +150,7 @@ const Nav: React.FC<NavProps> = ({ children }) => {
                 <a href="/pt">PORTUGUÊS</a>
               </li>
             </ul>
+            </div>
           </div>
         </Overlay>
       )}
