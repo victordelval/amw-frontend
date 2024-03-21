@@ -19,7 +19,9 @@ export default function Area() {
   }
 
   return (
-    <Overlay>
+    <Overlay
+     opacity={1}
+    >
       <div className="intro">
         <h1>Track Mining in the Rainforest</h1>
         <p>
