@@ -34,7 +34,7 @@
 }
 @media (max-width: 900px) {
   .amw-logo {
-    top: 0px;
+    top: 60px;
   }
 }
 .amw-logo img {
@@ -44,6 +44,7 @@
 @media (max-width: 900px) {
   .amw-logo img {
     width: 90px;
+    height: 100px;
   }
 }
 .main-menu {
