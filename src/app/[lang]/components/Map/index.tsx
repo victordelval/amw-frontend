@@ -411,6 +411,12 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
       />
       </div>
 
+      <div className="partners">
+        <a className="pc-logo" href="https://pulitzercenter.org">Pulitzer Center</a> 
+        <a className="rin-logo" href="https://pulitzercenter.org/journalism/initiatives/rainforest-investigations-network-initiative">RIN</a> 
+        <a className="eg-logo" href="https://earthgenome.org/">Earth Genome</a>
+      </div>
+
       {areaVisible && <Area dictionary={dictionary} />}
       {/* @ts-ignore */}
       {map && map.getZoom() > 5 && (
