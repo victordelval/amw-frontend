@@ -132,9 +132,16 @@
   left: 20px;
   bottom: 50px;
   z-index: 40;
+  padding: 5px 5px 5px 15px;
+  border-radius: 5px;
+  background: rgba(2555,255,255,0.2);
 }
 .partners a {
   margin: 0 20px 0 0;
+  opacity: 0.8;
+}
+.partners a:hover {
+  opacity: 0.6;
 }
 .pc-logo {
   display: inline-block;
@@ -143,6 +150,7 @@
   height: 40px;
   background: url('/images/pc-logo.png') no-repeat center center;
   background-size: contain;
+
 }
 .rin-logo {
   display: inline-block;
