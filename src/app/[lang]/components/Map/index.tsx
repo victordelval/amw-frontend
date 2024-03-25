@@ -11,7 +11,11 @@ import MiniMap from "../MiniMap";
 import { convertBoundsToGeoJSON } from "./helpers";
 import { CopyOutlined } from "@ant-design/icons";
 
-const MainMap = () => {
+interface MainMapProps {
+  dictionary: { [key: string]: any };
+}
+
+const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [popupInfo, setPopupInfo] = useState<{
     latitude: number;
     longitude: number;
@@ -61,7 +65,6 @@ const MainMap = () => {
   const copyToClipboard = async (text: string): Promise<void> => {
     try {
       await navigator.clipboard.writeText(text);
-      console.log('Text copied to clipboard');
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
@@ -386,11 +389,12 @@ const MainMap = () => {
       </div>
 
       <div className="imagery-pills">
+    
       <Radio.Group 
         size="small"
         options={[
           {
-            label: 'Latest',
+            label:  dictionary?.map_ui.latest,
             value: 'https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg',
           },
           {
@@ -407,7 +411,7 @@ const MainMap = () => {
       />
       </div>
 
-      {areaVisible && <Area />}
+      {areaVisible && <Area dictionary={dictionary} />}
       {/* @ts-ignore */}
       {map && map.getZoom() > 5 && (
         /* @ts-ignore */

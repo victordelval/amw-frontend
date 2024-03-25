@@ -4,7 +4,13 @@ import Image from "next/image";
 import Logo from "../Nav/logo.svg";
 import "./style.css";
 
-export default function Loader() {
+
+interface LoaderProps {
+  dictionary: { [key: string]: any }
+}
+
+
+export default function Loader(props: LoaderProps) {
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {

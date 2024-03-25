@@ -4,7 +4,11 @@ import Overlay from "../Overlay";
 import Cookie from "js-cookie";
 import "./style.css";
 
-export default function Area() {
+interface IntroProps {
+  dictionary: { [key: string]: any };
+}
+
+const Intro: React.FC<IntroProps> = ({ dictionary }) => {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -23,15 +27,9 @@ export default function Area() {
      opacity={1}
     >
       <div className="intro">
-        <h1>Track Mining in the Rainforest</h1>
+        <h1>{ dictionary.intro.title }</h1>
         <p>
-          Amazon Mining Watch uses machine learning to map the scars of mining
-          activities in the Amazonian countries. By constantly analyzing
-          high-resolution and historical satellite images, this tool aims at
-          identifying the fast-paced growth of open-pit mining in the largest
-          rainforest in the world. This database is here to help journalists,
-          activists, and researchers better understand the causes and impacts of
-          the mining industry.
+         { dictionary.intro.text}
         </p>
         <a
           href="#close"
@@ -42,9 +40,11 @@ export default function Area() {
             Cookie.set("introViewed", "true", { expires: 30 });
           }}
         >
-          Explore Map
+          { dictionary.intro.explore }
         </a>
       </div>
     </Overlay>
   );
 }
+
+export default Intro;

@@ -10,10 +10,11 @@ export default async function Page({
 }: {
   params: { lang: Locale };
 }) {
+  const dictionary = await getDictionary(lang);
   return (
     <div>
-      <Intro />
-      <Footer />
+      <Intro dictionary={dictionary} />
+      <Footer dictionary={dictionary} />
     </div>
   );
 }

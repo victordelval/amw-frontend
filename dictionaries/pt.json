@@ -1,6 +1,25 @@
 {
   "menu": {
     "about_amw": "Sobre AMW",
-    "about": "Sobre"
-  }
+    "map": "Mapa",
+    "about": "Sobre",
+    "case_studies": "Estudos de Caso",
+    "methodology": "Metodologia",
+    "data_and_code": "Dados e Código",
+    "contact": "Contato"
+  },
+  "intro": {
+    "title": "MONITORE OS GARIMPOS NA FLORESTA",
+    "text": "Amazon Mining Watch utiliza inteligência artificial para mapear as cicatrizes deixadas pelas atividades de mineração na Amazônia. Ao analisar constantemente imagens de satélite de alta resolução, a ferramenta identifica o crescimento acelerado dos garimpos na maior floresta tropical do mundo. Este banco de dados está aqui para ajudar jornalistas, ativistas e pesquisadores a entenderem melhor as causas e os impactos da mineração.",
+    "explore": "Explore o mapa"
+  },
+  "map_ui": {
+    "latest": "Recentes",
+    "map_mode": "OPÇÃO DE MAPA"
+  },
+  "coverage": {
+    "area_affected_in": "ÁREA AFETADA EM",
+    "or": "ou",
+    "million_acres": "milhões de acres"
+ }
 }

@@ -12,16 +12,15 @@ import "./style.css";
 
 interface NavProps {
   children?: ReactNode;
+  dictionary: { [key: string]: any }
 }
 
-const Nav: React.FC<NavProps> = ({ children }) => {
+const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState('');
   const { setMenuOpen } = useMenu();
   const menuRef = useRef(null); // Ref for the menu to animate
-
-
 
   useEffect(() => {
     if (animate === 'in') {
@@ -60,7 +59,7 @@ const Nav: React.FC<NavProps> = ({ children }) => {
           setMenuOpen(false);
         }}
       >
-        About AMW
+        { dictionary.menu.about_amw }
       </Link>
 
       <a className="menu-lang" href="/en">
@@ -124,22 +123,22 @@ const Nav: React.FC<NavProps> = ({ children }) => {
             >
               
                 <li>
-                  <Link href="/">Map</Link>
+                  <Link href="/">{ dictionary.menu.map }</Link>
                 </li>
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">{ dictionary.menu.about }</Link>
                 </li>
                 <li>
-                  <Link href="/case-studies">Case Studies</Link>
+                  <Link href="/case-studies">{ dictionary.menu.case_studies }</Link>
                 </li>
                 <li>
-                  <Link href="/methodology">Methodology</Link>
+                  <Link href="/methodology">{ dictionary.menu.methodology }</Link>
                 </li>
                 <li>
-                  <Link href="/code">Data and Code</Link>
+                  <Link href="/code">{ dictionary.menu.data_and_code }</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact">{ dictionary.menu.contact }</Link>
                 </li>
              
             </ul>

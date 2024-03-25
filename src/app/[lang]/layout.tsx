@@ -20,22 +20,23 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: { lang: Locale,  };
 }>) {
+  const dictionary = await getDictionary(params.lang);
   return (
     <html lang={params.lang}>
       <AntdRegistry>
         <MenuProvider>
           <body>
-            <Nav />
-            <MainMap />
+            <Nav dictionary={dictionary} />
+            <MainMap dictionary={dictionary} />
             {children}
-            <Loader />
+            <Loader dictionary={dictionary} />
           </body>
         </MenuProvider>
       </AntdRegistry>
