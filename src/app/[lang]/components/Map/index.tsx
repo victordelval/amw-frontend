@@ -2,8 +2,8 @@
 import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { message, Button, Radio, Slider } from 'antd';
-import Map, { Layer, Source, Popup  } from "react-map-gl";
+import { message, Button, Radio, Slider } from "antd";
+import Map, { Layer, Source, Popup } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
 import Area from "../Area";
@@ -29,8 +29,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [areaVisible, setAreaVisible] = useState(true);
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState();
-  const [mapStyle, setMapStyle] = useState('mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30');
-  const [activeLayer, setActiveLayer] = useState('mines-layer-2023');
+  const [mapStyle, setMapStyle] = useState(
+    "mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30",
+  );
+  const [activeLayer, setActiveLayer] = useState("mines-layer-2023");
 
   useEffect(() => {
     if (window.location.hash) {
@@ -66,9 +68,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
     try {
       await navigator.clipboard.writeText(text);
     } catch (err) {
-      console.error('Failed to copy: ', err);
+      console.error("Failed to copy: ", err);
     }
-  }
+  };
 
   const isVisible = (layerId: string) => {
     /*
@@ -76,15 +78,15 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
       return 'visible';
     }
     */
-    return 'visible';
-  }
+    return "visible";
+  };
 
   const getOpacity = (layerId: string) => {
     if (layerId === activeLayer) {
       return 1;
     }
     return 0;
-  }
+  };
 
   return (
     <div
@@ -147,28 +149,25 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             latitude: lngLat.lat,
             /* @ts-ignore */
             longitude: lngLat.lng,
-            zoom: map.getZoom()
+            zoom: map.getZoom(),
           });
         }}
       >
-
         <Source
           id={"hole-source"}
           type="vector"
           url="mapbox://dmccarey.3pur462h"
         />
-
-        <Layer 
+        <Layer
           id={"hole-layer"}
           source={"hole-source"}
-          source-layer={'amazon-hole-0asofs'}
+          source-layer={"amazon-hole-0asofs"}
           type="fill"
           paint={{
             "fill-color": "#ffffff",
-            "fill-opacity": 0.8
+            "fill-opacity": 0.8,
           }}
         />
-              
         <Source
           id={"mines-2023"}
           type="geojson"
@@ -176,7 +175,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2023-01-01_2023-12-31-dissolved-0.6.geojson`}
         />
-
         <Source
           id={"mines-2022"}
           type="geojson"
@@ -184,7 +182,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2022-01-01_2022-12-31-dissolved-0.6.geojson`}
         />
-
         <Source
           id={"mines-2021"}
           type="geojson"
@@ -192,7 +189,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2021-01-01_2021-12-31-dissolved-0.6.geojson`}
         />
-
         <Source
           id={"mines-2020"}
           type="geojson"
@@ -200,7 +196,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2020-01-01_2020-12-31-dissolved-0.6.geojson`}
         />
-
         <Source
           id={"mines-2019"}
           type="geojson"
@@ -208,108 +203,109 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2019-01-01_2019-12-31-dissolved-0.6.geojson`}
         />
-
         <Source
           id={"mines-2018"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
           data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2018-01-01_2018-12-31-dissolved-0.6.geojson`}
-        />  `   `   
-
-
-        {/* @ts-ignore */}
+        />{" "}
+        ` `{/* @ts-ignore */}
         <Layer
           id={"mines-layer-2023"}
           source={"mines-2023"}
           type="line"
-          layout={{
-           // visibility: isVisible('mines-layer-2023')
-          }}
+          layout={
+            {
+              // visibility: isVisible('mines-layer-2023')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2023'),
+            "line-opacity": getOpacity("mines-layer-2023"),
             "line-width": 1,
           }}
         />
-
         {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2022"}
           source={"mines-2022"}
           type="line"
-          layout={{
-           // visibility: isVisible('mines-layer-2022')
-          }}
+          layout={
+            {
+              // visibility: isVisible('mines-layer-2022')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2022'),
+            "line-opacity": getOpacity("mines-layer-2022"),
             "line-width": 1,
           }}
         />
-
         {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2021"}
           source={"mines-2021"}
           type="line"
-          layout={{
-           // visibility: isVisible('mines-layer-2021')
-          }}
+          layout={
+            {
+              // visibility: isVisible('mines-layer-2021')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2021'),
+            "line-opacity": getOpacity("mines-layer-2021"),
             "line-width": 1,
           }}
         />
-
-
         {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2020"}
           source={"mines-2020"}
           type="line"
-          layout={{
-          //  visibility: isVisible('mines-layer-2020')
-          }}
+          layout={
+            {
+              //  visibility: isVisible('mines-layer-2020')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2020'),
+            "line-opacity": getOpacity("mines-layer-2020"),
             "line-width": 1,
           }}
         />
-
-         {/* @ts-ignore */}
-         <Layer
+        {/* @ts-ignore */}
+        <Layer
           id={"mines-layer-2019"}
           source={"mines-2019"}
           type="line"
-          layout={{
-          //  visibility: isVisible('mines-layer-2019')
-          }}
+          layout={
+            {
+              //  visibility: isVisible('mines-layer-2019')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2019'),
+            "line-opacity": getOpacity("mines-layer-2019"),
             "line-width": 1,
           }}
         />
-
-
-         {/* @ts-ignore */}
-         <Layer
+        {/* @ts-ignore */}
+        <Layer
           id={"mines-layer-2018"}
           source={"mines-2018"}
           type="line"
-          layout={{
-          //  visibility: isVisible('mines-layer-2018')
-          }}
+          layout={
+            {
+              //  visibility: isVisible('mines-layer-2018')
+            }
+          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity('mines-layer-2018'),
+            "line-opacity": getOpacity("mines-layer-2018"),
             "line-width": 1,
           }}
         />
-
         {popupVisible && popupInfo && (
           <Popup
             longitude={popupInfo?.longitude}
@@ -320,23 +316,27 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           >
             <table>
               <tr>
-                <td className="number-value">{ popupInfo.longitude.toFixed(3) }</td>
-                <td className="number-value">{ popupInfo?.latitude.toFixed(3) }</td>
+                <td className="number-value">
+                  {popupInfo.longitude.toFixed(3)}
+                </td>
+                <td className="number-value">
+                  {popupInfo?.latitude.toFixed(3)}
+                </td>
               </tr>
               <tr>
                 <td>Longitude</td>
                 <td>Latitude</td>
               </tr>
             </table>
-            
-           
+
             <a
               className="copy-url"
-              onClick={async(e) => {
+              onClick={async (e) => {
                 e.preventDefault();
-                copyToClipboard(`${process.env.NEXT_PUBLIC_DOMAIN}/#${popupInfo.zoom.toFixed(2)}/${popupInfo.longitude.toFixed(3)}/${ popupInfo?.latitude.toFixed(3)}`)
-                .then(() => {
-                  message.success('URL copied')
+                copyToClipboard(
+                  `${process.env.NEXT_PUBLIC_DOMAIN}/#${popupInfo.zoom.toFixed(2)}/${popupInfo.longitude.toFixed(3)}/${popupInfo?.latitude.toFixed(3)}`,
+                ).then(() => {
+                  message.success("URL copied");
                 });
               }}
               href="#copy"
@@ -348,73 +348,78 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
       </Map>
 
       <div className="year-pills">
-        
-   
-      <Radio.Group 
-   
-        options={[
-          {
-            label: '2018',
-            value: 'mines-layer-2018',
-          },
-          {
-            label: '2019',
-            value: 'mines-layer-2019',
-          },
-          {
-            label: '2020',
-            value: 'mines-layer-2020',
-          },
-          {
-            label: '2021',
-            value: 'mines-layer-2021',
-          },
-          {
-            label: '2022',
-            value: 'mines-layer-2022',
-          },
-          {
-            label: '2023',
-            value: 'mines-layer-2023',
-          }
-        ]} 
-        value={activeLayer}
-        onChange={({ target: { value } }) => {
-          setActiveLayer(value);
-        }}
-        optionType="button" 
-        buttonStyle="solid"
-      />
-    
+        <Radio.Group
+          options={[
+            {
+              label: "2018",
+              value: "mines-layer-2018",
+            },
+            {
+              label: "2019",
+              value: "mines-layer-2019",
+            },
+            {
+              label: "2020",
+              value: "mines-layer-2020",
+            },
+            {
+              label: "2021",
+              value: "mines-layer-2021",
+            },
+            {
+              label: "2022",
+              value: "mines-layer-2022",
+            },
+            {
+              label: "2023",
+              value: "mines-layer-2023",
+            },
+          ]}
+          value={activeLayer}
+          onChange={({ target: { value } }) => {
+            setActiveLayer(value);
+          }}
+          optionType="button"
+          buttonStyle="solid"
+        />
       </div>
 
       <div className="imagery-pills">
-    
-      <Radio.Group 
-        size="small"
-        options={[
-          {
-            label:  dictionary?.map_ui.latest,
-            value: 'https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg',
-          },
-          {
-            label: 'Hi-res',
-            value: 'mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30',
-          }
-        ]} 
-        value={mapStyle}
-        onChange={({ target: { value } }) => {
-          setMapStyle(value);
-        }}
-        optionType="button" 
-        buttonStyle="solid"
-      />
+        <Radio.Group
+          size="small"
+          options={[
+            {
+              label: dictionary?.map_ui.latest,
+              value:
+                "https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg",
+            },
+            {
+              label: "Hi-res",
+              value: "mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30",
+            },
+          ]}
+          value={mapStyle}
+          onChange={({ target: { value } }) => {
+            setMapStyle(value);
+          }}
+          optionType="button"
+          buttonStyle="solid"
+        />
       </div>
 
       <div className="partners">
-        <a className="pc-logo" href="https://pulitzercenter.org">Pulitzer Center</a> 
-        <a className="rin-logo" href="https://pulitzercenter.org/journalism/initiatives/rainforest-investigations-network-initiative">RIN</a> 
-        <a className="eg-logo" href="https://earthgenome.org/">Earth Genome</a>
+        <a className="pc-logo" href="https://pulitzercenter.org">
+          Pulitzer Center
+        </a>
+        <a
+          className="rin-logo"
+          href="https://pulitzercenter.org/journalism/initiatives/rainforest-investigations-network-initiative"
+        >
+          RIN
+        </a>
+        <a className="eg-logo" href="https://earthgenome.org/">
+          Earth Genome
+        </a>
       </div>
 
       {areaVisible && <Area dictionary={dictionary} />}

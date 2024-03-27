@@ -122,7 +122,7 @@
   top: 50px;
   z-index: 1000;
 }
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .year-pills {
     top: 45px;
   }
@@ -134,7 +134,7 @@
   z-index: 40;
   padding: 5px 5px 5px 15px;
   border-radius: 5px;
-  background: rgba(2555,255,255,0.2);
+  background: rgba(2555, 255, 255, 0.3);
 }
 .partners a {
   margin: 0 20px 0 0;
@@ -148,16 +148,15 @@
   text-indent: -9999px;
   width: 170px;
   height: 40px;
-  background: url('/images/pc-logo.png') no-repeat center center;
+  background: url("/images/pc-logo.png") no-repeat center center;
   background-size: contain;
-
 }
 .rin-logo {
   display: inline-block;
   text-indent: -9999px;
   width: 40px;
   height: 40px;
-  background: url('/images/rin-logo.png') no-repeat center center;
+  background: url("/images/rin-logo.png") no-repeat center center;
   background-size: contain;
 }
 .eg-logo {
@@ -165,10 +164,10 @@
   text-indent: -9999px;
   width: 100px;
   height: 40px;
-  background: url('/images/eg-logo.png') no-repeat center center;
+  background: url("/images/eg-logo.png") no-repeat center center;
   background-size: contain;
 }
-@media(max-width: 950px) {
+@media (max-width: 950px) {
   .partners {
     display: none;
   }

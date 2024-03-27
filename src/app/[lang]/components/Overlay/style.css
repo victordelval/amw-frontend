@@ -30,12 +30,12 @@
   font-size: 17px;
 }
 .overlay .content h2 {
-   border-bottom: 3px solid #22B573;
-   font-size: 16px;
-   padding-bottom: 10px;
+  border-bottom: 3px solid #22b573;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 .overlay .content p a {
-  color: #ECAF00;
+  color: #ecaf00;
   text-decoration: none;
 }
 .overlay .content p a:hover {
@@ -52,7 +52,7 @@
   top: 170px;
   width: 50%;
 }
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .case-study-images {
     display: none;
   }
@@ -61,17 +61,17 @@
   margin-bottom: -20px;
 }
 .case-study-images .image-1 {
-  transform: rotate(3deg)
+  transform: rotate(3deg);
 }
 .case-study-images .image-2 {
-  transform: rotate(-4deg)
+  transform: rotate(-4deg);
 }
 .case-study-images .image-3 {
-  transform: rotate(5deg)
+  transform: rotate(5deg);
 }
 .case-study-images .image-4 {
-  transform: rotate(-2deg)
+  transform: rotate(-2deg);
 }
 .case-study-images .image-5 {
-  transform: rotate(3deg)
+  transform: rotate(3deg);
 }

@@ -1,12 +1,24 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { i18n, type Locale } from "../../../../i18n-config";
 import { getDictionary } from "../../../get-dictionary";
 
-export const metadata: Metadata = {
-  title: "Methodology - Amazon Mining Watch",
-  description:
-    "A New Platform to Monitor Mining in Amazon Using Artificial Intelligence.",
+type Props = {
+  params: { lang: "en" | "es" | "pt" };
 };
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  // read route params
+  console.log(params);
+  const { lang } = params;
+  const dictionary = await getDictionary(lang);
+
+  return {
+    title: dictionary.method.title,
+  };
+}
 
 export default async function PageLayout({
   children, // will be a page or nested layout

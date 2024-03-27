@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -12,34 +12,34 @@ import "./style.css";
 
 interface NavProps {
   children?: ReactNode;
-  dictionary: { [key: string]: any }
+  dictionary: { [key: string]: any };
 }
 
 const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
-  const [animate, setAnimate] = useState('');
+  const [animate, setAnimate] = useState("");
   const { setMenuOpen } = useMenu();
   const menuRef = useRef(null); // Ref for the menu to animate
 
   useEffect(() => {
-    if (animate === 'in') {
-      gsap.from('li', {
+    if (animate === "in") {
+      gsap.from("li", {
         xPercent: 130,
-        stagger: 0.07
+        stagger: 0.07,
       });
-      gsap.to('li', {
+      gsap.to("li", {
         xPercent: 0,
         duration: 0.8,
         stagger: 0.07,
         ease: "back.in(1.4)",
       });
     } else {
-      gsap.from('li', {
+      gsap.from("li", {
         xPercent: 0,
-        stagger: 0.07
+        stagger: 0.07,
       });
-      gsap.to('li', {
+      gsap.to("li", {
         xPercent: 130,
         duration: 0.8,
         stagger: 0.07,
@@ -59,7 +59,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
           setMenuOpen(false);
         }}
       >
-        { dictionary.menu.about_amw }
+        {dictionary.menu.about_amw}
       </Link>
 
       <a className="menu-lang" href="/en">
@@ -80,8 +80,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
           e.preventDefault();
           showMenu ? setMenuOpen(false) : setMenuOpen(true);
           showMenu ? setShowMenu(false) : setShowMenu(true);
-          showMenu ? setAnimate('out') : setAnimate('in')
-         
+          showMenu ? setAnimate("out") : setAnimate("in");
         }}
       >
         Menu
@@ -99,60 +98,56 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
         <Image src={Logo} />
       </Link>
       {showMenu && (
-        <Overlay
-        opacity={1}
-        >
+        <Overlay opacity={1}>
           <div className="main-menu">
-
-           <div>
-            <ul
-             ref={menuRef}
-              onClick={() => {
-                setMenuOpen(false);
-                setAnimate('out')
-                setTimeout(() => {
-                  setShowMenu(false);
-                },800);
-                
-              }}
-              style={{
-                listStyleType: "none",
-                textAlign: "right",
-                margin: "20px 0",
-              }}
-            >
-              
+            <div>
+              <ul
+                ref={menuRef}
+                onClick={() => {
+                  setMenuOpen(false);
+                  setAnimate("out");
+                  setTimeout(() => {
+                    setShowMenu(false);
+                  }, 800);
+                }}
+                style={{
+                  listStyleType: "none",
+                  textAlign: "right",
+                  margin: "20px 0",
+                }}
+              >
                 <li>
-                  <Link href="/">{ dictionary.menu.map }</Link>
+                  <Link href="/">{dictionary.menu.map}</Link>
                 </li>
                 <li>
-                  <Link href="/about">{ dictionary.menu.about }</Link>
+                  <Link href="/about">{dictionary.menu.about}</Link>
                 </li>
                 <li>
-                  <Link href="/case-studies">{ dictionary.menu.case_studies }</Link>
+                  <Link href="/case-studies">
+                    {dictionary.menu.case_studies}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/methodology">{ dictionary.menu.methodology }</Link>
+                  <Link href="/methodology">{dictionary.menu.methodology}</Link>
                 </li>
                 <li>
-                  <Link href="/code">{ dictionary.menu.data_and_code }</Link>
+                  <Link href="/code">{dictionary.menu.data_and_code}</Link>
                 </li>
                 <li>
-                  <Link href="/contact">{ dictionary.menu.contact }</Link>
+                  <Link href="/contact">{dictionary.menu.contact}</Link>
                 </li>
-             
-            </ul>
-            <ul className="lang-menu">
-              <li>
-                <a href="/en">ENGLISH</a>
-              </li>
-              <li>
-                <a href="/es">ESPAÑOLA</a>
-              </li>
-              <li>
-                <a href="/pt">PORTUGUÊS</a>
-              </li>
-            </ul>
+              </ul>
+              <ul className="lang-menu">
+                <li>
+                  <a href="/en">ENGLISH</a>
+                </li>
+                <li>
+                  <a href="/es">ESPAÑOLA</a>
+                </li>
+                <li>
+                  <a href="/pt">PORTUGUÊS</a>
+                </li>
+              </ul>
             </div>
           </div>
         </Overlay>

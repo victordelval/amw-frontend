@@ -9,10 +9,10 @@ interface OverlayProps {
 const Overlay: React.FC<OverlayProps> = (props) => {
   const { children, opacity } = props;
   return (
-    <div 
+    <div
       className="overlay"
       style={{
-        background: opacity === 1 ? `#003e36` : `rgba(0, 62, 54, 0.9)`
+        background: opacity === 1 ? `#003e36` : `rgba(0, 62, 54, 0.9)`,
       }}
     >
       <div className="content">{children}</div>

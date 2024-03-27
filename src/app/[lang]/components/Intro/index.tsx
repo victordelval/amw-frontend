@@ -23,14 +23,10 @@ const Intro: React.FC<IntroProps> = ({ dictionary }) => {
   }
 
   return (
-    <Overlay
-     opacity={1}
-    >
+    <Overlay opacity={1}>
       <div className="intro">
-        <h1>{ dictionary.intro.title }</h1>
-        <p>
-         { dictionary.intro.text}
-        </p>
+        <h1>{dictionary.intro.title}</h1>
+        <p>{dictionary.intro.text}</p>
         <a
           href="#close"
           className="btn"
@@ -40,11 +36,11 @@ const Intro: React.FC<IntroProps> = ({ dictionary }) => {
             Cookie.set("introViewed", "true", { expires: 30 });
           }}
         >
-          { dictionary.intro.explore }
+          {dictionary.intro.explore}
         </a>
       </div>
     </Overlay>
   );
-}
+};
 
 export default Intro;

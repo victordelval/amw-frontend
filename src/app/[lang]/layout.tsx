@@ -5,16 +5,28 @@ import Nav from "./components/Nav";
 import { getDictionary } from "../../get-dictionary";
 import { MenuProvider } from "./menuContext";
 import Loader from "./components/Loader";
+import React from "react";
 import "./globals.css";
-
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-export const metadata: Metadata = {
-  title: "Homepage - Amazon Mining Watch",
-  description:
-    "A New Platform to Monitor Mining in Amazon Using Artificial Intelligence.",
+type Props = {
+  params: { lang: "en" | "es" | "pt" };
 };
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  // read route params
+  const { lang } = params;
+  const dictionary = await getDictionary(lang);
+
+  return {
+    title: dictionary.home.title,
+    description: dictionary.home.description,
+  };
+}
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -24,8 +36,8 @@ export default async function RootLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode;
-  params: { lang: Locale,  };
+  children: React.ReactNode[];
+  params: { lang: Locale };
 }>) {
   const dictionary = await getDictionary(params.lang);
   return (
