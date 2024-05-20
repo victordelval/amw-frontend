@@ -433,7 +433,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         <MiniMap bounds={bounds} />
       )}
       { map &&
-      <Footer zoom={map.getZoom()} />
+      /* @ts-ignore */
+      <Footer zoom={map?.getZoom()} />
       }
     </div>
   );
