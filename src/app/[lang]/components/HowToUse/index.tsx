@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Carousel, Button } from 'antd';
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, CaretUpFilled } from "@ant-design/icons";
 import "./style.css";
 
 interface HowToUseParams {
@@ -39,6 +39,7 @@ const SampleNextArrow = (props: any) => {
 
 return(
     <div className="how-to-use">
+        <CaretUpFilled className="caret"/>
         <a 
          onClick={ (e) => {
             e.preventDefault()

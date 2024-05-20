@@ -1,11 +1,11 @@
 .how-to-use {
   background: #22B573;
   position: fixed;
-  top: 28px;
+  top: 40px;
   right: 100px;
   max-width: 320px;
   z-index: 10000;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   padding: 20px 40px 20px 40px;
 }
 .how-to-use h2 {
@@ -46,4 +46,11 @@
   position: absolute;
   right: 15px;
   top: 15px;
+}
+.caret.anticon {
+  color: #22B573;
+  font-size: 40px;
+  position: absolute;
+  top: -20px;
+  left: 120px;
 }
