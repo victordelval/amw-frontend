@@ -21,7 +21,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState("");
   const [showHowToUse, setShowHowToUse] = useState(false);
-  const { setMenuOpen } = useMenu();
+  const { menuOpen, setMenuOpen } = useMenu();
   const menuRef = useRef(null); // Ref for the menu to animate
 
   useEffect(() => {
