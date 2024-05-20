@@ -5,11 +5,12 @@ import { CloseOutlined, CaretUpFilled } from "@ant-design/icons";
 import "./style.css";
 
 interface HowToUseParams {
+  dictionary?: any,
   onClose: () => void
 }
 
 export default function HowToUse(params: HowToUseParams) {
-    const { onClose } = params;
+    const { onClose, dictionary } = params;
 
   // from https://react-slick.neostack.com/docs/example/custom-arrows
 const SampleNextArrow = (props: any) => {
@@ -49,8 +50,8 @@ return(
          href="#close">
             <CloseOutlined />
         </a>
-        <h2>How to use</h2>
-        <p>Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map:</p>
+        <h2>{ dictionary.how_to_use.title }</h2>
+        <p>{ dictionary.how_to_use.description }</p>
         <Carousel dots={false} arrows {...settings}>
             <div>
               <div className="content">

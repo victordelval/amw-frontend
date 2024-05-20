@@ -166,6 +166,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
       )}
       { showHowToUse &&
       <HowToUse 
+        dictionary={dictionary}
         onClose={() => setShowHowToUse(false)}
       />
       }

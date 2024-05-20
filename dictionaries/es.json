@@ -45,5 +45,9 @@
     "area_affected_in": "ÁREA AFECTADA EN",
     "or": "o",
     "million_acres": "millones de acres"
+ },
+ "how_to_use": {
+   "title": "How to use (es)",
+   "description": "(es) Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map."
  }
 }
