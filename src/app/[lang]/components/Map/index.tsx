@@ -31,7 +31,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState();
   const [mapStyle, setMapStyle] = useState(
-    "mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30",
+    "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
   );
   const [activeLayer, setActiveLayer] = useState("mines-layer-2023");
 
@@ -399,7 +399,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             },
             {
               label: "Hi-res",
-              value: "mapbox://styles/dmccarey/cltnbtpom022h01qec2tvce30",
+              value: "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
             },
           ]}
           value={mapStyle}
