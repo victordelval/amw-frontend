@@ -20,7 +20,7 @@
   transition: background-color 0.4s cubic-bezier(0.5, 0, 0.2, 1);
 }
 .nav .menu-link:hover {
-  background: rgb(25, 170, 86);
+  background: #22B573;
 }
 .nav .menu-link-last {
   margin-right: 20px;

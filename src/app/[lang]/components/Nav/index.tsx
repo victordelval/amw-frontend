@@ -5,6 +5,7 @@ import Image from "next/image";
 import Logo from "./logo.svg";
 import Link from "next/link";
 import Overlay from "../Overlay";
+import HowToUse from "../HowToUse";
 import { useMenu } from "../../menuContext";
 import { Tween } from "react-gsap";
 import gsap from "gsap";
@@ -19,6 +20,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState("");
+  const [showHowToUse, setShowHowToUse] = useState(false);
   const { setMenuOpen } = useMenu();
   const menuRef = useRef(null); // Ref for the menu to animate
 
@@ -51,6 +53,16 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   return (
     <div className="nav">
       {children}
+      <a
+       className="menu-link"
+       href="#how-to-use"
+       onClick={(e) => {
+        e.preventDefault()
+        showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true)
+       }}
+      >
+        How to use
+      </a>
       <Link
         className="menu-link"
         href="/about"
@@ -152,6 +164,11 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
           </div>
         </Overlay>
       )}
+      { showHowToUse &&
+      <HowToUse 
+        onClose={() => setShowHowToUse(false)}
+      />
+      }
     </div>
   );
 };

@@ -1,0 +1,49 @@
+.how-to-use {
+  background: #22B573;
+  position: fixed;
+  top: 28px;
+  right: 100px;
+  max-width: 320px;
+  z-index: 10000;
+  border-radius: 0 0 5px 5px;
+  padding: 20px 40px 20px 40px;
+}
+.how-to-use h2 {
+  margin: 20px 0 10px 0;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.how-to-use p {
+  color: #fff;
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+.how-to-use .slick-next {
+  color: #fff!important;
+  font-size: 18px !important;
+  inset-inline-end: -10px !important;
+  margin-top: 0 !important;
+}
+.how-to-use .slick-prev {
+  color: #fff !important;
+  font-size: 18px !important;
+  inset-inline-start: -5px !important;
+  z-index: 100;
+  margin-top: 0 !important;
+}
+.how-to-use img {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+.how-to-use .close-btn {
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

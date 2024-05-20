@@ -307,6 +307,32 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             "line-width": 1,
           }}
         />
+        <Source
+            id="amazon-cover-water"
+            type={"vector"}
+            url={"mapbox://mapbox.mapbox-streets-v8"}
+        />
+        <Layer
+          id="country-labels"
+          type="symbol"
+          source="amazon-cover-water"
+          source-layer="place_label"
+          filter={[
+              "all",
+              [
+                  "<=",
+                  ["string", ["get", "class"]],
+                  "settlement, settlement_subdivision",
+              ],
+          ]}
+          minzoom={6}
+          layout={{
+              "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+          }}
+          paint={{
+              "text-color": "#ffffff",
+          }}
+        />
         {popupVisible && popupInfo && (
           <Popup
             longitude={popupInfo?.longitude}
