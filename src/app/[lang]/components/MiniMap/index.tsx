@@ -55,7 +55,6 @@ const MiniMap: React.FC<MiniMapProps> = ({ bounds }) => {
           // @ts-ignore
           data={geojson}
         />
-
         {/* @ts-ignore */}
         <Layer
           id={"amazon-layer"}
