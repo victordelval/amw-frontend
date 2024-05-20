@@ -166,7 +166,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           type="fill"
           paint={{
             "fill-color": "#ffffff",
-            "fill-opacity": 0.8,
+            "fill-opacity": 0.5,
           }}
         />
         <Source
