@@ -17,6 +17,7 @@ h5 {
 }
 h1 {
   font-size: 60px;
+  margin-bottom: 20px;
 }
 
 .case-study-images {
@@ -27,4 +28,27 @@ h1 {
 }
 .case-study-images img {
   margin-bottom: 20px;
+}
+
+
+.amw-btn {
+  display: block;
+  padding: 10px 10px;
+  background: #ecaf00;
+  color: #003E30 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 25px;
+  margin: 0 auto;
+  width: 260px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none !important;
+}
+.amw-btn:hover {
+  background: #22B573;
+}
+
+.amw-mail-link {
+  font-size: 24px !important;
 }

@@ -1,13 +1,18 @@
+'use client'
+import ScaleBar from "../ScaleBar";
 import "./style.css";
 
 interface FooterProps {
-  dictionary: { [key: string]: any };
+  zoom: number,
+  dictionary?: { [key: string]: any };
 }
 
-const Footer: React.FC<FooterProps> = ({ dictionary }) => {
+const Footer: React.FC<FooterProps> = ({ zoom, dictionary }) => {
   return (
     <div className="footer">
-      <div className="mode">{dictionary.map_ui.map_mode}</div>
+      <div className="mode"></div>
+      <div className="mining-legend"><div className="mine-swatch"></div> Mining areas detected</div>
+      <ScaleBar zoom={zoom} />
     </div>
   );
 };

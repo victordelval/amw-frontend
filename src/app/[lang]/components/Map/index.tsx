@@ -3,10 +3,11 @@ import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { message, Button, Radio, Slider } from "antd";
-import Map, { Layer, Source, Popup } from "react-map-gl";
+import Map, { Layer, Source, Popup, ScaleControl } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
 import Area from "../Area";
+import Footer from  "../Footer";
 import MiniMap from "../MiniMap";
 import { convertBoundsToGeoJSON } from "./helpers";
 import { CopyOutlined } from "@ant-design/icons";
@@ -345,6 +346,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             </a>
           </Popup>
         )}
+        <div className="map-scale-control">
+        
+       </div>
       </Map>
 
       <div className="year-pills">
@@ -428,6 +432,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         /* @ts-ignore */
         <MiniMap bounds={bounds} />
       )}
+      { map &&
+      <Footer zoom={map.getZoom()} />
+      }
     </div>
   );
 };
