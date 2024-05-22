@@ -56,7 +56,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
     /* @ts-ignore */
     const zoom = map?.getZoom();
     /* @ts-ignore */
-    const center = map.getCenter();
+    const center = map?.getCenter();
     const lng = center.lng;
     const lat = center.lat;
     router.replace(
@@ -126,7 +126,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
               setAreaVisible(true);
             }
             /* @ts-ignore */
-            const currentBounds = convertBoundsToGeoJSON(map.getBounds());
+            const currentBounds = convertBoundsToGeoJSON(map?.getBounds());
             /* @ts-ignore */
             setBounds(currentBounds);
           }

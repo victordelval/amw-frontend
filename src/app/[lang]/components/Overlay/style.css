@@ -17,6 +17,11 @@
   top: 0;
   padding: 30px 30px 200px 30px;
 }
+@media (max-width: 900px) {
+  .overlay .content {
+    width: 70%;
+  }
+}
 @media (max-width: 600px) {
   .overlay .content {
     width: 70%;
