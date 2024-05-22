@@ -11,25 +11,19 @@ interface IntroProps {
 const Intro: React.FC<IntroProps> = ({ dictionary }) => {
   const [showIntro, setShowIntro] = useState(true);
 
-  /*
+  
   useEffect(() => {
+    console.log(showIntro)
     const introViewed = Cookie.get("introViewed") === "true";
+    
     if (introViewed) {
       setShowIntro(false);
     }
   }, []);
-  */
 
-  useEffect(() => {
-    const hash = window.location.hash.substring(1); // Get the hash without the '#'
-    if (hash) {
-      setShowIntro(false)
-    } else {
-      setShowIntro(true)
-    }
-  })
+  
 
-  if (!showIntro) {
+  if (showIntro === false) {
     return null;
   }
 
@@ -43,8 +37,8 @@ const Intro: React.FC<IntroProps> = ({ dictionary }) => {
           className="btn"
           onClick={(e) => {
             e.preventDefault();
-            setShowIntro(false);
             Cookie.set("introViewed", "true", { expires: 30 });
+            setShowIntro(false);
           }}
         >
           {dictionary.intro.explore}

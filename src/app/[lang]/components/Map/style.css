@@ -133,6 +133,7 @@
   z-index: 40;
   padding: 5px 5px 5px 15px;
   border-radius: 5px;
+  z-index: 100;
 }
 .partners a {
   margin: 0 20px 0 0;

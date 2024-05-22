@@ -7,6 +7,7 @@
   height: 100vh;
   color: #fff;
   overflow-y: auto;
+  opacity: 0.95;
 }
 .overlay .content {
   width: 55%;
