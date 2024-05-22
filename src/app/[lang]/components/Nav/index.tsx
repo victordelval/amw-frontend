@@ -61,7 +61,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
         showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true)
        }}
       >
-        How to use
+        { dictionary.how_to_use.title }
       </a>
       <Link
         className="menu-link"

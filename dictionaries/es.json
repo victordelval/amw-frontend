@@ -39,7 +39,8 @@
   },
   "map_ui": {
     "latest": "Recientes",
-    "map_mode": "OPCIÓN DE MAPA"
+    "map_mode": "OPCIÓN DE MAPA",
+    "mining_areas_detected": "Zona minera detectada"
   },
   "coverage": {
     "area_affected_in": "ÁREA AFECTADA EN",
@@ -47,7 +48,7 @@
     "million_acres": "millones de acres"
  },
  "how_to_use": {
-   "title": "How to use (es)",
-   "description": "(es) Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map."
+   "title": "CÓMO UTILIZAR",
+   "description": "Las minas detectadas están delimitadas por líneas amarillas. Aquí, algunos ejemplos característicos de zonas mineras en el mapa:"
  }
 }

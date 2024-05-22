@@ -460,7 +460,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
       )}
       { map &&
       /* @ts-ignore */
-      <Footer zoom={map?.getZoom()} />
+      <Footer zoom={map?.getZoom()} dictionary={dictionary} />
       }
     </div>
   );
