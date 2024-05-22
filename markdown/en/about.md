@@ -14,8 +14,6 @@ The Amazon Mining Watch is a partnership between the Pulitzer Center´s Rainfore
 
 All the data published on this website is available for download. Our hope is that journalists, activists, and researchers can use this information to better contextualize and provide “on the ground” validation. As for open data, our commitment to open-source code and transparency is central. The methodology and the limitations of this platform are fully described on this site and are also accessible via GitHub.
 
-<slideshow  />
-
 The beta version of the platform was launched in April 2022, and our goal is to continue developing features and analytical capabilities, surfacing insights about the current state of mining in the Amazon region.
 
 *There are some cases where the network can incorrectly identify mined areas. Here are some examples of incorrect detections.*

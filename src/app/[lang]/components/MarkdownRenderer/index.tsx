@@ -3,7 +3,6 @@ import React from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkReact from 'remark-react';
-import { Slideshow } from '../Slideshow';
 
 interface MarkdownRendererProps {
   content: string;
@@ -12,11 +11,16 @@ interface MarkdownRendererProps {
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
   const processor = unified()
     .use(remarkParse)
+    /* @ts-ignore */
+    .use(remarkReact, {
+      createElement: React.createElement,
+      Fragment: React.Fragment,
+    });
 
   const result = processor.processSync(content).result;
 
-
-  return <>{result}</>;
+   /* @ts-ignore */
+  return <div>{result}</div>;
 };
 
 export default MarkdownRenderer;
