@@ -7,7 +7,6 @@ import Link from "next/link";
 import Overlay from "../Overlay";
 import HowToUse from "../HowToUse";
 import { useMenu } from "../../menuContext";
-import { Tween } from "react-gsap";
 import gsap from "gsap";
 import "./style.css";
 
@@ -22,31 +21,33 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const [animate, setAnimate] = useState("");
   const [showHowToUse, setShowHowToUse] = useState(false);
   const { menuOpen, setMenuOpen } = useMenu();
-  const menuRef = useRef(null); // Ref for the menu to animate
+  const menuRef = useRef<HTMLUListElement>(null); // Ref for the menu to animate
 
   useEffect(() => {
-    if (animate === "in") {
-      gsap.from("li", {
-        xPercent: 130,
-        stagger: 0.07,
-      });
-      gsap.to("li", {
-        xPercent: 0,
-        duration: 0.8,
-        stagger: 0.07,
-        ease: "back.in(1.4)",
-      });
-    } else {
-      gsap.from("li", {
-        xPercent: 0,
-        stagger: 0.07,
-      });
-      gsap.to("li", {
-        xPercent: 130,
-        duration: 0.8,
-        stagger: 0.07,
-        ease: "back.out(1.4)",
-      });
+    if (menuRef.current) {
+      if (animate === "in") {
+        gsap.fromTo(
+          menuRef.current.querySelectorAll("li"),
+          { xPercent: 130 },
+          {
+            xPercent: 0,
+            duration: 0.8,
+            stagger: 0.07,
+            ease: "back.out(1.4)", //
+          },
+        );
+      } else {
+        gsap.fromTo(
+          menuRef.current.querySelectorAll("li"),
+          { xPercent: 0 },
+          {
+            xPercent: 130,
+            duration: 0.7,
+            stagger: 0.06,
+            ease: "back.in(1.4)",
+          },
+        );
+      }
     }
   }, [animate]);
 
@@ -54,14 +55,14 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
     <div className="nav">
       {children}
       <a
-       className="menu-link"
-       href="#how-to-use"
-       onClick={(e) => {
-        e.preventDefault()
-        showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true)
-       }}
+        className="menu-link"
+        href="#how-to-use"
+        onClick={(e) => {
+          e.preventDefault();
+          showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true);
+        }}
       >
-        { dictionary.how_to_use.title }
+        {dictionary.how_to_use.title}
       </a>
       <Link
         className="menu-link"
@@ -107,7 +108,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
         }}
       >
         {/* @ts-ignore */}
-        <Image src={Logo} />
+        <Image src={Logo} alt="Logo" />
       </Link>
       {showMenu && (
         <Overlay opacity={1}>
@@ -164,12 +165,12 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
           </div>
         </Overlay>
       )}
-      { showHowToUse &&
-      <HowToUse 
-        dictionary={dictionary}
-        onClose={() => setShowHowToUse(false)}
-      />
-      }
+      {showHowToUse && (
+        <HowToUse
+          dictionary={dictionary}
+          onClose={() => setShowHowToUse(false)}
+        />
+      )}
     </div>
   );
 };

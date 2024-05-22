@@ -30,12 +30,11 @@ h1 {
   margin-bottom: 20px;
 }
 
-
 .amw-btn {
   display: block;
   padding: 10px 10px;
   background: #ecaf00;
-  color: #003E30 !important;
+  color: #003e30 !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 25px;
@@ -46,9 +45,16 @@ h1 {
   text-decoration: none !important;
 }
 .amw-btn:hover {
-  background: #22B573;
+  background: #22b573;
 }
 
 .amw-mail-link {
   font-size: 24px !important;
+}
+
+.slideshow {
+  position: fixed;
+  right: 800px;
+  width: 300px;
+  top: 200px;
 }

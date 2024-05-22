@@ -38,6 +38,7 @@
     "explore": "Explore o mapa"
   },
   "map_ui": {
+    "loading": "carregando",
     "latest": "Recentes",
     "map_mode": "OPÇÃO DE MAPA",
     "mining_areas_detected": "Area de mineração detectada"

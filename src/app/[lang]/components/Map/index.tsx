@@ -7,7 +7,7 @@ import Map, { Layer, Source, Popup, ScaleControl } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
 import Area from "../Area";
-import Footer from  "../Footer";
+import Footer from "../Footer";
 import MiniMap from "../MiniMap";
 import { convertBoundsToGeoJSON } from "./helpers";
 import { CopyOutlined } from "@ant-design/icons";
@@ -54,7 +54,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
 
   const updateURLHash = () => {
     /* @ts-ignore */
-    const zoom = map.getZoom();
+    const zoom = map?.getZoom();
     /* @ts-ignore */
     const center = map.getCenter();
     const lng = center.lng;
@@ -120,7 +120,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         onMove={(e) => {
           if (map) {
             /* @ts-ignore */
-            if (map.getZoom() > 4) {
+            if (map?.getZoom() > 4) {
               setAreaVisible(false);
             } else {
               setAreaVisible(true);
@@ -150,7 +150,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             latitude: lngLat.lat,
             /* @ts-ignore */
             longitude: lngLat.lng,
-            zoom: map.getZoom(),
+            zoom: map?.getZoom(),
           });
         }}
       >
@@ -308,9 +308,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           }}
         />
         <Source
-            id="amazon-cover-water"
-            type={"vector"}
-            url={"mapbox://mapbox.mapbox-streets-v8"}
+          id="amazon-cover-water"
+          type={"vector"}
+          url={"mapbox://mapbox.mapbox-streets-v8"}
         />
         <Layer
           id="country-labels"
@@ -318,19 +318,19 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           source="amazon-cover-water"
           source-layer="place_label"
           filter={[
-              "all",
-              [
-                  "<=",
-                  ["string", ["get", "class"]],
-                  "settlement, settlement_subdivision",
-              ],
+            "all",
+            [
+              "<=",
+              ["string", ["get", "class"]],
+              "settlement, settlement_subdivision",
+            ],
           ]}
           minzoom={6}
           layout={{
-              "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+            "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
           }}
           paint={{
-              "text-color": "#ffffff",
+            "text-color": "#ffffff",
           }}
         />
         {popupVisible && popupInfo && (
@@ -372,9 +372,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             </a>
           </Popup>
         )}
-        <div className="map-scale-control">
-        
-       </div>
+        <div className="map-scale-control"></div>
       </Map>
 
       <div className="year-pills">
@@ -454,14 +452,14 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
 
       {areaVisible && <Area dictionary={dictionary} />}
       {/* @ts-ignore */}
-      {map && map.getZoom() > 5 && (
+      {map && map?.getZoom() > 5 && (
         /* @ts-ignore */
         <MiniMap bounds={bounds} />
       )}
-      { map &&
-      /* @ts-ignore */
-      <Footer zoom={map?.getZoom()} dictionary={dictionary} />
-      }
+      {map && (
+        /* @ts-ignore */
+        <Footer zoom={map?.getZoom()} dictionary={dictionary} />
+      )}
     </div>
   );
 };

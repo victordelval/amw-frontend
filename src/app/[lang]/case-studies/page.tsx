@@ -34,8 +34,9 @@ const Page: NextPage<PageProps> = async ({ params: { lang } }) => {
           />
         ))}
       </div>
+
       {/* @ts-ignore */}
-      <div dangerouslySetInnerHTML={getMarkdownText(content.content)} />
+      <div dangerouslySetInnerHTML={getMarkdownText(content?.content)} />
     </Overlay>
   );
 };

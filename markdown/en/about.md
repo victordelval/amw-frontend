@@ -1,13 +1,3 @@
----
-images:
-  - how-to-use-6.jpg
-  - how-to-use-6.jpg
-  - how-to-use-6.jpg
-  - how-to-use-6.jpg
-caption: There are some cases where the network can incorrectly identify mined areas. Here are some examples of incorrect detections.
-title: These are not mines
----
-
 # About 
 
 The Amazon Mining Watch is a partnership between the Pulitzer Center´s Rainforest Investigations Network and the Earth Genome. These two nonprofit organizations have joined forces to bring together the power of machine learning and investigative journalism to shed light on large-scale environmental problems in the Amazon.

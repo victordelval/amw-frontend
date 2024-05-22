@@ -5,14 +5,14 @@ import Map, { ScaleControl } from "react-map-gl";
 import geojson from "../../data/amazon_basin.json";
 
 interface MiniMapProps {
-  zoom: number
+  zoom: number;
 }
 
 const ScaleBar: React.FC<MiniMapProps> = ({ zoom }) => {
   return (
     <div className="scale-bar">
-      <Map
-       zoom={zoom}
+      <Map zoom={zoom}
+      mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       >
         <div className="scale">
           <div className="scale-left"></div>

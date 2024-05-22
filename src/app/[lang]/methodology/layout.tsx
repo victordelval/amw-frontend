@@ -11,7 +11,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
-  console.log(params);
   const { lang } = params;
   const dictionary = await getDictionary(lang);
 

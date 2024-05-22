@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Logo from "../Nav/logo.svg";
+import gsap from "gsap";
 import "./style.css";
 
 interface LoaderProps {
@@ -9,7 +10,9 @@ interface LoaderProps {
 }
 
 export default function Loader(props: LoaderProps) {
+  const { dictionary } = props;
   const [showLoader, setShowLoader] = useState(true);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setShowLoader(true);
@@ -18,8 +21,31 @@ export default function Loader(props: LoaderProps) {
     }, 1500);
   }, []);
 
+  useEffect(() => {
+    if (loaderRef.current) {
+      const dots = loaderRef.current.querySelectorAll(".js-loader-dot");
+      if (dots.length > 0) {
+        gsap
+          .timeline({ repeat: -1 })
+          .to(dots, {
+            y: -5,
+            stagger: 0.1,
+            duration: 0.3,
+            ease: "linear",
+          })
+          .to(dots, {
+            y: 0,
+            stagger: 0.1,
+            duration: 0.3,
+            ease: "linear",
+          });
+      }
+    }
+  }, []);
+
   return showLoader ? (
     <div
+      ref={loaderRef}
       className="loader"
       style={{
         position: "fixed",
@@ -33,10 +59,14 @@ export default function Loader(props: LoaderProps) {
     >
       <div className="content">
         <div>
-          {/* @ts-ignore */}
-          <Image width={280} src={Logo} />
+          <Image width={280} src={Logo} alt="Logo" />
         </div>
-        Loading...
+        {dictionary?.map_ui.loading}&nbsp;
+        <div className="loader-dots">
+          <span className="js-loader-dot"></span>
+          <span className="js-loader-dot"></span>
+          <span className="js-loader-dot"></span>
+        </div>
       </div>
     </div>
   ) : null;
