@@ -14,6 +14,10 @@ const ScaleBar: React.FC<MiniMapProps> = ({ zoom }) => {
       <Map
        zoom={zoom}
       >
+        <div className="scale">
+          <div className="scale-left"></div>
+          <div className="scale-right"></div>
+        </div>
         <ScaleControl />
       </Map>
     </div>
