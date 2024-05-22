@@ -3,7 +3,7 @@ import { i18n, type Locale } from "../../../../i18n-config";
 import Overlay from "../components/Overlay";
 import { getDictionary } from "../../../get-dictionary";
 import { getMarkdown } from "../../../get-markdown";
-import { marked } from "marked";
+import MarkdownRenderer from "../components/MarkdownRenderer"; // Import the MarkdownRenderer component
 
 interface PageProps {
   params: {
@@ -14,18 +14,11 @@ interface PageProps {
 const Page: NextPage<PageProps> = async ({ params: { lang } }) => {
   const dictionary = await getDictionary(lang);
   const content = await getMarkdown(lang, `${lang}/about.md`);
-  const getMarkdownText = (content: string) => {
-    const rawMarkup = marked.parse(content);
-    {
-      /* @ts-ignore */
-    }
-    return { __html: rawMarkup };
-  };
-
+  
   return (
     <Overlay>
-      {/* @ts-ignore */}
-      <div dangerouslySetInnerHTML={getMarkdownText(content.content)} />
+      {/* Render the MarkdownRenderer with the processed content */}
+      <MarkdownRenderer content={content.content} />
     </Overlay>
   );
 };

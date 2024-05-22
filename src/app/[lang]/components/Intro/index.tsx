@@ -11,12 +11,23 @@ interface IntroProps {
 const Intro: React.FC<IntroProps> = ({ dictionary }) => {
   const [showIntro, setShowIntro] = useState(true);
 
+  /*
   useEffect(() => {
     const introViewed = Cookie.get("introViewed") === "true";
     if (introViewed) {
       setShowIntro(false);
     }
   }, []);
+  */
+
+  useEffect(() => {
+    const hash = window.location.hash.substring(1); // Get the hash without the '#'
+    if (hash) {
+      setShowIntro(false)
+    } else {
+      setShowIntro(true)
+    }
+  })
 
   if (!showIntro) {
     return null;

@@ -10,9 +10,14 @@
   margin-left: auto;
 }
 @media (max-width: 600px) {
+  .overlay .intro h1 {
+    top: 20%;
+  }
+}
+@media (max-width: 600px) {
   .intro {
     width: 80%;
-    top: 20%;
+    top: 40%;
   }
 }
 .overlay .intro h1 {
@@ -41,6 +46,7 @@
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
   margin: 10px 0;
   display: inline-block;
 }
