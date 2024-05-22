@@ -12,15 +12,9 @@ interface MarkdownRendererProps {
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
   const processor = unified()
     .use(remarkParse)
-    .use(remarkReact, {
-      createElement: React.createElement,
-      Fragment: React.Fragment,
-      remarkReactComponents: { slideshow: Slideshow },
-    });
 
   const result = processor.processSync(content).result;
 
-  console.log(result)
 
   return <>{result}</>;
 };
