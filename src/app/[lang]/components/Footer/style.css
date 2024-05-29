@@ -21,7 +21,7 @@
 }
 .mining-legend {
   color: #fff;
-  right: 140px;
+  right: 290px;
   top: 10px;
   font-size: 11px;
   position: absolute;
@@ -37,14 +37,4 @@
   background: rgba(236, 175, 0, 0.7);
   border: 1px solid #ecaf00;
 }
-.mapboxgl-ctrl-scale {
-  position: fixed;
-  right: 45px;
-  bottom: -3px;
-  z-index: 10000;
-  border-color: #fff;
-  color: #fff;
-  background-color: transparent;
-  border: none !important;
-  width: 100px !important;
-}
+

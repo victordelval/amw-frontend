@@ -33,6 +33,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [mapStyle, setMapStyle] = useState(
     "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
   );
+  const [yearly, setYearly] = useState(false);
   const [activeLayer, setActiveLayer] = useState("mines-layer-2023");
 
   useEffect(() => {
@@ -101,7 +102,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         initialViewState={{
           longitude: -67.78320182377449,
           latitude: -5.871455584726869,
-          zoom: 4,
+          zoom: 3.7,
         }}
         maxBounds={[
           [-92, -24],
@@ -165,8 +166,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           source-layer={"amazon-hole-0asofs"}
           type="fill"
           paint={{
-            "fill-color": "#ffffff",
-            "fill-opacity": 0.5,
+            "fill-color": yearly ? '#aaaaaa' : '#aaaaaa',
+            "fill-opacity": yearly ? 0.3 : 0.8,
           }}
         />
         <Source
@@ -422,12 +423,17 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
                 "https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg",
             },
             {
-              label: "Hi-res",
+              label: dictionary?.map_ui.hi_res,
               value: "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
             },
           ]}
           value={mapStyle}
           onChange={({ target: { value } }) => {
+            if (value !== "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w") {
+              setYearly(false);
+            } else {
+              setYearly(true);
+            }
             setMapStyle(value);
           }}
           optionType="button"

@@ -40,6 +40,7 @@
   "map_ui": {
     "loading": "carregando",
     "latest": "Recentes",
+    "hi_res": "Hi-Res",
     "map_mode": "OPÇÃO DE MAPA",
     "mining_areas_detected": "Area de mineração detectada"
   },

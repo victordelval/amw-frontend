@@ -54,9 +54,15 @@
 
 .case-study-images {
   position: absolute;
-  left: -68%;
+  left: -58%;
   top: 170px;
   width: 50%;
+}
+@media (min-width: 1400px) {
+  .case-study-images {
+    width: 70%;
+    left: -95%;
+  }
 }
 @media (max-width: 600px) {
   .case-study-images {

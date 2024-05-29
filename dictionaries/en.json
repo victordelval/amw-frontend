@@ -33,7 +33,8 @@
 },
 "map_ui": {
   "loading": "loading",
-  "latest": "Latest",
+  "latest": "Yearly",
+  "hi_res": "Hi-Res",
   "map_mode": "Map mode",
   "mining_areas_detected": "Mining Areas Detected"
 },

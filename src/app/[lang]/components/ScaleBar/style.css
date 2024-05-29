@@ -1,16 +1,20 @@
-.mini-map {
+.mapboxgl-ctrl-scale {
   position: fixed;
-  right: 80px;
-  bottom: 100px;
-  width: 200px;
-  height: 150px;
+  right: 45px;
+  bottom: -3px;
+  z-index: 10000;
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+  border: none !important;
+  width: 310px !important;
 }
 .scale {
   position: fixed;
-  width: 50px;
+  width: 120px;
   border-bottom: 1px solid #fff;
   bottom: 14px;
-  right: 20px;
+  right: 50px;
 }
 .scale .scale-left {
   position: absolute;
