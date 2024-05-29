@@ -156,6 +156,28 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         }}
       >
         <Source
+          id="boundaries"
+          type="vector"
+          url="mapbox://mapbox.country-boundaries-v1"
+        />
+        {!yearly && (
+          <Layer
+            id="boundary-layer"
+            source="boundaries"
+            type="line"
+            source-layer="country_boundaries"
+            paint={{
+              "line-color": "#666",
+              "line-width": 0.5,
+            }}
+          />
+        )}
+        <Source
+          id="water"
+          type="vector"
+          url="mapbox://mapbox.mapbox-streets-v8"
+        />
+        <Source
           id={"hole-source"}
           type="vector"
           url="mapbox://dmccarey.3pur462h"
@@ -166,7 +188,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           source-layer={"amazon-hole-0asofs"}
           type="fill"
           paint={{
-            "fill-color": yearly ? '#aaaaaa' : '#ffffff',
+            "fill-color": yearly ? "#aaaaaa" : "#ffffff",
             "fill-opacity": yearly ? 0.4 : 0.6,
           }}
         />
@@ -420,7 +442,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             {
               label: dictionary?.map_ui.latest,
               value:
-                "https://api.maptiler.com/maps/satellite/style.json?key=1G4rD08o8hiFjgNmxNJg",
+                "https://api.maptiler.com/maps/satellite/style.json?key=LTYjFQeomRfetQbTCERa",
             },
             {
               label: dictionary?.map_ui.hi_res,
@@ -429,7 +451,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           ]}
           value={mapStyle}
           onChange={({ target: { value } }) => {
-            if (value !== "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w") {
+            if (
+              value !== "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w"
+            ) {
               setYearly(false);
             } else {
               setYearly(true);

@@ -55,47 +55,47 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
     <div className="nav">
       {children}
 
-      { !showMenu &&
-      <a
-        className="menu-link"
-        href="#how-to-use"
-        onClick={(e) => {
-          e.preventDefault();
-          showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true);
-        }}
-      >
-        {dictionary.how_to_use.title}
-      </a>
-      }
+      {!showMenu && (
+        <a
+          className="menu-link"
+          href="#how-to-use"
+          onClick={(e) => {
+            e.preventDefault();
+            showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true);
+          }}
+        >
+          {dictionary.how_to_use.title}
+        </a>
+      )}
 
-      { !showMenu &&
-      <Link
-        className="menu-link"
-        href="/about"
-        onClick={() => {
-          setShowMenu(false);
-          setMenuOpen(false);
-        }}
-      >
-        {dictionary.menu.about_amw}
-      </Link>
-      }
-      
-      { !showMenu &&
-      <>
-      <a className="menu-lang" href="/en">
-        EN
-      </a>
-      <span className="divider">|</span>
-      <a className="menu-lang" href="/es">
-        ES
-      </a>
-      <span className="divider">|</span>
-      <a className="menu-lang" href="/pt">
-        PT
-      </a>
-      </>
-      }     
+      {!showMenu && (
+        <Link
+          className="menu-link"
+          href="/about"
+          onClick={() => {
+            setShowMenu(false);
+            setMenuOpen(false);
+          }}
+        >
+          {dictionary.menu.about_amw}
+        </Link>
+      )}
+
+      {!showMenu && (
+        <>
+          <a className="menu-lang" href="/en">
+            EN
+          </a>
+          <span className="divider">|</span>
+          <a className="menu-lang" href="/es">
+            ES
+          </a>
+          <span className="divider">|</span>
+          <a className="menu-lang" href="/pt">
+            PT
+          </a>
+        </>
+      )}
       <a
         className="menu-link menu-link-last"
         href="#menu"
@@ -103,17 +103,17 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
           e.preventDefault();
           showMenu ? setMenuOpen(false) : setMenuOpen(true);
           if (showMenu) {
-            setAnimate("out") 
+            setAnimate("out");
             setTimeout(() => {
-              setShowMenu(false)
-            }, 1000)
+              setShowMenu(false);
+            }, 1000);
           } else {
-            setAnimate("in") 
-            setShowMenu(true)
+            setAnimate("in");
+            setShowMenu(true);
           }
         }}
       >
-        { showMenu ? 'Close' : 'Menu' }
+        {showMenu ? "Close" : "Menu"}
       </a>
 
       <Link

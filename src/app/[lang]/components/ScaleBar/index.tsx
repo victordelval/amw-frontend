@@ -11,9 +11,7 @@ interface MiniMapProps {
 const ScaleBar: React.FC<MiniMapProps> = ({ zoom }) => {
   return (
     <div className="scale-bar">
-      <Map zoom={zoom}
-      mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-      >
+      <Map zoom={zoom} mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}>
         <div className="scale">
           <div className="scale-left"></div>
           <div className="scale-right"></div>
