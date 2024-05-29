@@ -166,8 +166,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           source-layer={"amazon-hole-0asofs"}
           type="fill"
           paint={{
-            "fill-color": yearly ? '#aaaaaa' : '#aaaaaa',
-            "fill-opacity": yearly ? 0.3 : 0.8,
+            "fill-color": yearly ? '#aaaaaa' : '#ffffff',
+            "fill-opacity": yearly ? 0.4 : 0.6,
           }}
         />
         <Source
