@@ -54,6 +54,8 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   return (
     <div className="nav">
       {children}
+
+      { !showMenu &&
       <a
         className="menu-link"
         href="#how-to-use"
@@ -64,6 +66,9 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
       >
         {dictionary.how_to_use.title}
       </a>
+      }
+
+      { !showMenu &&
       <Link
         className="menu-link"
         href="/about"
@@ -74,7 +79,10 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
       >
         {dictionary.menu.about_amw}
       </Link>
-
+      }
+      
+      { !showMenu &&
+      <>
       <a className="menu-lang" href="/en">
         EN
       </a>
@@ -86,17 +94,26 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
       <a className="menu-lang" href="/pt">
         PT
       </a>
+      </>
+      }     
       <a
         className="menu-link menu-link-last"
         href="#menu"
         onClick={(e) => {
           e.preventDefault();
           showMenu ? setMenuOpen(false) : setMenuOpen(true);
-          showMenu ? setShowMenu(false) : setShowMenu(true);
-          showMenu ? setAnimate("out") : setAnimate("in");
+          if (showMenu) {
+            setAnimate("out") 
+            setTimeout(() => {
+              setShowMenu(false)
+            }, 1000)
+          } else {
+            setAnimate("in") 
+            setShowMenu(true)
+          }
         }}
       >
-        Menu
+        { showMenu ? 'Close' : 'Menu' }
       </a>
 
       <Link
