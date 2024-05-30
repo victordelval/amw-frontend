@@ -23,6 +23,8 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const { menuOpen, setMenuOpen } = useMenu();
   const menuRef = useRef<HTMLUListElement>(null); // Ref for the menu to animate
 
+  const isRootPath = /^\/(en|es|pt)?\/?$/.test(pathname);
+
   useEffect(() => {
     if (menuRef.current) {
       if (animate === "in") {
@@ -55,56 +57,57 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
     <div className="nav">
       {children}
 
-      {!showMenu && (
-        <a
-          className="menu-link"
-          href="#how-to-use"
-          onClick={(e) => {
-            e.preventDefault();
-            showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true);
-          }}
-        >
-          {dictionary.how_to_use.title}
-        </a>
-      )}
+      {!showMenu && isRootPath && (
+        <>
+          <a
+            className="menu-link"
+            href="#how-to-use"
+            onClick={(e) => {
+              e.preventDefault();
+              showHowToUse ? setShowHowToUse(false) : setShowHowToUse(true);
+            }}
+          >
+            {dictionary.how_to_use.title}
+          </a>
 
-      {!showMenu && (
-        <Link
-          className="menu-link"
-          href="/about"
-          onClick={() => {
-            setShowMenu(false);
-            setMenuOpen(false);
-          }}
-        >
-          {dictionary.menu.about_amw}
-        </Link>
+          <Link
+            className="menu-link"
+            href="/about"
+            onClick={() => {
+              setShowMenu(false);
+              setMenuOpen(false);
+            }}
+          >
+            {dictionary.menu.about_amw}
+          </Link>
+        </>
       )}
 
       {!showMenu && (
         <>
           <Link 
-          className="menu-lang" 
-          onClick={() => sessionStorage.setItem("introViewed", "false")}
-          href="/en">
-            EN
+            className="menu-lang" 
+            onClick={() => sessionStorage.setItem("introViewed", "false")}
+            href="/en">
+              EN
           </Link>
           <span className="divider">|</span>
           <Link 
-          className="menu-lang" 
-          onClick={() => sessionStorage.setItem("introViewed", "false")}
-          href="/es">
-            ES
+            className="menu-lang" 
+            onClick={() => sessionStorage.setItem("introViewed", "false")}
+            href="/es">
+              ES
           </Link>
           <span className="divider">|</span>
           <Link 
-          className="menu-lang" 
-          onClick={() => sessionStorage.setItem("introViewed", "false")}
-          href="/pt">
-            PT
+            className="menu-lang" 
+            onClick={() => sessionStorage.setItem("introViewed", "false")}
+            href="/pt">
+              PT
           </Link>
         </>
       )}
+
       <a
         className="menu-link menu-link-last"
         href="#menu"
