@@ -83,17 +83,26 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
 
       {!showMenu && (
         <>
-          <a className="menu-lang" href="/en">
+          <Link 
+          className="menu-lang" 
+          onClick={() => sessionStorage.setItem("introViewed", "false")}
+          href="/en">
             EN
-          </a>
+          </Link>
           <span className="divider">|</span>
-          <a className="menu-lang" href="/es">
+          <Link 
+          className="menu-lang" 
+          onClick={() => sessionStorage.setItem("introViewed", "false")}
+          href="/es">
             ES
-          </a>
+          </Link>
           <span className="divider">|</span>
-          <a className="menu-lang" href="/pt">
+          <Link 
+          className="menu-lang" 
+          onClick={() => sessionStorage.setItem("introViewed", "false")}
+          href="/pt">
             PT
-          </a>
+          </Link>
         </>
       )}
       <a
