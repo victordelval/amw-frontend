@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Carousel, Button } from "antd";
 import { CloseOutlined, CaretUpFilled } from "@ant-design/icons";
 import "./style.css";
@@ -11,8 +11,22 @@ interface HowToUseParams {
 
 export default function HowToUse(params: HowToUseParams) {
   const { onClose, dictionary } = params;
+  const ref = useRef(null);
 
-  // from https://react-slick.neostack.com/docs/example/custom-arrows
+  const handleClickOutside = (e: Event) => {
+    /* @ts-ignore */
+    if (ref.current && !ref.current.contains(e.target)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const SampleNextArrow = (props: any) => {
     const { className, style, onClick } = props;
     return <div className={className} onClick={onClick} />;
@@ -29,7 +43,7 @@ export default function HowToUse(params: HowToUseParams) {
   };
 
   return (
-    <div className="how-to-use">
+    <div ref={ref} className="how-to-use">
       <CaretUpFilled className="caret" />
       <a
         onClick={(e) => {
