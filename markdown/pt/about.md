@@ -6,11 +6,11 @@ Todos os dados publicados neste site estão disponíveis para download. Nossa es
 
 A versão beta da plataforma foi lançada em abril de 2022 e nosso objetivo é continuar desenvolvendo recursos e capacidades analíticas, trazendo entendimento sobre o estado atual da mineração na região amazônica.
 
-*Estes são alguns casos em que a máquina pode identificar incorretamente as áreas de mineração.  Aqui exemplos de detecções erradas*
+_Estes são alguns casos em que a máquina pode identificar incorretamente as áreas de mineração. Aqui exemplos de detecções erradas_
 
 ![not-mines](/images/not-mines.png)
 
-A RIN foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical:  a Amazônia,  a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
+A RIN foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
 
 ![recent](/images/img-1.jpg)
 ![hi-res](/images/img-2.jpg)

@@ -1,24 +1,24 @@
 {
-"home": {
-  "title": "Homepage - Amazon Mining Watch",
-  "description": "A New Platform to Monitor Mining in Amazon Using Artificial Intelligence."
-},
-"about": {
-  "title": "About - Amazon Mining Watch"
-},
-"case_studies": {
-  "title": "Case studies - Amazon Mining Watch"
-},
-"method": {
-  "title": "Methodology - Amazon Mining Watch"
-},
-"code": {
-  "title": "Code - Amazon Mining Watch"
-},
-"contact": {
-  "title": "Contact - Amazon Mining Watch"
-},
-"menu": {
+  "home": {
+    "title": "Homepage - Amazon Mining Watch",
+    "description": "A New Platform to Monitor Mining in Amazon Using Artificial Intelligence."
+  },
+  "about": {
+    "title": "About - Amazon Mining Watch"
+  },
+  "case_studies": {
+    "title": "Case studies - Amazon Mining Watch"
+  },
+  "method": {
+    "title": "Methodology - Amazon Mining Watch"
+  },
+  "code": {
+    "title": "Code - Amazon Mining Watch"
+  },
+  "contact": {
+    "title": "Contact - Amazon Mining Watch"
+  },
+  "menu": {
     "about_amw": "About AMW",
     "about": "About",
     "map": "Map",
@@ -27,25 +27,25 @@
     "data_and_code": "Data and code",
     "contact": "Contact"
   },
-"intro": {
-  "title": "TRACK MINING IN THE RAINFOREST",
-  "text": "Amazon Mining Watch uses machine learning to map the scars of mining activities in the Amazonian countries. By constantly analyzing high-resolution and historical satellite images, this tool aims at identifying the fast-paced growth of open-pit mining in the largest rainforest in the world. This database is here to help journalists, activists, and researchers better understand the causes and impacts of the mining industry.",
-  "explore": "Explore map"
-},
-"map_ui": {
-  "loading": "loading",
-  "latest": "Yearly",
-  "hi_res": "Hi-Res",
-  "map_mode": "Map mode",
-  "mining_areas_detected": "Mining Areas Detected"
-},
-"coverage": {
-   "area_affected_in": "Area affected in",
-   "or": "or",
-   "million_acres": "million acres"
-},
-"how_to_use": {
-  "title": "How to use",
-  "description": "Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map."
-}
+  "intro": {
+    "title": "TRACK MINING IN THE RAINFOREST",
+    "text": "Amazon Mining Watch uses machine learning to map the scars of mining activities in the Amazonian countries. By constantly analyzing high-resolution and historical satellite images, this tool aims at identifying the fast-paced growth of open-pit mining in the largest rainforest in the world. This database is here to help journalists, activists, and researchers better understand the causes and impacts of the mining industry.",
+    "explore": "Explore map"
+  },
+  "map_ui": {
+    "loading": "loading",
+    "latest": "Yearly",
+    "hi_res": "Hi-Res",
+    "map_mode": "Map mode",
+    "mining_areas_detected": "Mining Areas Detected"
+  },
+  "coverage": {
+    "area_affected_in": "Area affected in",
+    "or": "or",
+    "million_acres": "million acres"
+  },
+  "how_to_use": {
+    "title": "How to use",
+    "description": "Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map."
+  }
 }

@@ -48,9 +48,9 @@
     "area_affected_in": "ÁREA AFECTADA EN",
     "or": "o",
     "million_acres": "millones de acres"
- },
- "how_to_use": {
-   "title": "CÓMO UTILIZAR",
-   "description": "Las minas detectadas están delimitadas por líneas amarillas. Aquí, algunos ejemplos característicos de zonas mineras en el mapa:"
- }
+  },
+  "how_to_use": {
+    "title": "CÓMO UTILIZAR",
+    "description": "Las minas detectadas están delimitadas por líneas amarillas. Aquí, algunos ejemplos característicos de zonas mineras en el mapa:"
+  }
 }

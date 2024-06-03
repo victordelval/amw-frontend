@@ -33,8 +33,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [mapStyle, setMapStyle] = useState(
     "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
   );
-  const [yearly, setYearly] = useState(false);
-  const [activeLayer, setActiveLayer] = useState("mines-layer-2023");
+  const [yearly, setYearly] = useState(true);
+  const [activeLayer, setActiveLayer] = useState("2023");
 
   useEffect(() => {
     if (window.location.hash) {
@@ -74,17 +74,15 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
     }
   };
 
-  const isVisible = (layerId: string) => {
-    /*
-    if (layerId === activeLayer) {
-      return 'visible';
+  const getOpacity = (layerId: string) => {
+    if (layerId === `mines-layer-${activeLayer}`) {
+      return 1;
     }
-    */
-    return "visible";
+    return 0;
   };
 
-  const getOpacity = (layerId: string) => {
-    if (layerId === activeLayer) {
+  const getSatelliteOpacity = (layerId: string) => {
+    if (yearly && layerId === `sentinel-layer-${activeLayer}`) {
       return 1;
     }
     return 0;
@@ -155,28 +153,108 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           });
         }}
       >
+
+        { /* ================== SENTINEL2 SOURCES =================== */}
         <Source
-          id="boundaries"
-          type="vector"
-          url="mapbox://mapbox.country-boundaries-v1"
+          id="sentinel-2018"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
         />
-        {!yearly && (
-          <Layer
-            id="boundary-layer"
-            source="boundaries"
-            type="line"
-            source-layer="country_boundaries"
-            paint={{
-              "line-color": "#666",
-              "line-width": 0.5,
-            }}
-          />
-        )}
         <Source
-          id="water"
-          type="vector"
-          url="mapbox://mapbox.mapbox-streets-v8"
+          id="sentinel-2019"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
         />
+        <Source
+          id="sentinel-2020"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
+        />
+        <Source
+          id="sentinel-2021"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
+        />
+        <Source
+          id="sentinel-2022"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
+        />
+        <Source
+          id="sentinel-2023"
+          type="raster"
+          tiles={[
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
+          ]}
+          tileSize={256}
+        />
+
+        { /* ================== SENTINEL2 LAYERS =================== */}
+        <Layer
+          id="sentinel-layer-2018"
+          type="raster"
+          source={`sentinel-2018`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2018`),
+          }}
+        />
+        <Layer
+          id="sentinel-layer-2019"
+          type="raster"
+          source={`sentinel-2019`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2019`),
+          }}
+        />
+        <Layer
+          id="sentinel-layer-2020"
+          type="raster"
+          source={`sentinel-2020`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2020`),
+          }}
+        />
+        <Layer
+          id="sentinel-layer-2021"
+          type="raster"
+          source={`sentinel-2021`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2021`),
+          }}
+        />
+        <Layer
+          id="sentinel-layer-2022"
+          type="raster"
+          source={`sentinel-2022`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2022`),
+          }}
+        />
+        <Layer
+          id="sentinel-layer-2023"
+          type="raster"
+          source={`sentinel-2023`}
+          paint={{
+            "raster-opacity": getSatelliteOpacity(`sentinel-layer-2023`),
+          }}
+        />
+
+        { /* ================== MASK =================== */}
         <Source
           id={"hole-source"}
           type="vector"
@@ -188,153 +266,135 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           source-layer={"amazon-hole-0asofs"}
           type="fill"
           paint={{
-            "fill-color": yearly ? "#aaaaaa" : "#ffffff",
-            "fill-opacity": yearly ? 0.4 : 0.6,
+            "fill-color": yearly ? "#dddddd" : "#ffffff",
+            "fill-opacity": yearly ? 1 : 0.6,
           }}
         />
+
+        { /* ================== BORDERS =================== */}
+        <Source
+          id="boundaries"
+          type="vector"
+          url="mapbox://mapbox.country-boundaries-v1"
+        />
+        <Layer
+          id="boundary-layer"
+          source="boundaries"
+          type="line"
+          source-layer="country_boundaries"
+          paint={{
+            "line-color": "#999",
+            "line-width": 0.5,
+          }}
+        />
+
+        { /* ================== MINE SOURCES =================== */}
         <Source
           id={"mines-2023"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2023-01-01_2023-12-31-dissolved-0.6.geojson`}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2023-01-01_2023-12-31-dissolved-0.6.geojson`}
         />
         <Source
           id={"mines-2022"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2022-01-01_2022-12-31-dissolved-0.6.geojson`}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2022-01-01_2022-12-31-dissolved-0.6.geojson`}
         />
         <Source
           id={"mines-2021"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2021-01-01_2021-12-31-dissolved-0.6.geojson`}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2021-01-01_2021-12-31-dissolved-0.6.geojson`}
         />
         <Source
           id={"mines-2020"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2020-01-01_2020-12-31-dissolved-0.6.geojson`}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2020-01-01_2020-12-31-dissolved-0.6.geojson`}
         />
         <Source
           id={"mines-2019"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2019-01-01_2019-12-31-dissolved-0.6.geojson`}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2019-01-01_2019-12-31-dissolved-0.6.geojson`}
         />
         <Source
           id={"mines-2018"}
           type="geojson"
           tolerance={0.05}
           // @ts-ignore
-          data={`https://raw.githubusercontent.com/earthrise-media/mining-detector/main/data/outputs/48px_v3.2-3.7ensemble/amazon_basin_48px_v3.2-3.7ensemble_0.50_2018-01-01_2018-12-31-dissolved-0.6.geojson`}
-        />{" "}
-        ` `{/* @ts-ignore */}
+          data={`${process.env.NEXT_PUBLIC_MINES_URL}/amazon_basin_48px_v3.2-3.7ensemble_0.50_2018-01-01_2018-12-31-dissolved-0.6.geojson`}
+        />
+        
+        { /* ================== MINE LAYERS =================== */}
         <Layer
           id={"mines-layer-2023"}
           source={"mines-2023"}
           type="line"
-          layout={
-            {
-              // visibility: isVisible('mines-layer-2023')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2023"),
+            "line-opacity": getOpacity(`mines-layer-2023`),
             "line-width": 1,
           }}
         />
-        {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2022"}
           source={"mines-2022"}
           type="line"
-          layout={
-            {
-              // visibility: isVisible('mines-layer-2022')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2022"),
+            "line-opacity": getOpacity(`mines-layer-2022`),
             "line-width": 1,
           }}
         />
-        {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2021"}
           source={"mines-2021"}
           type="line"
-          layout={
-            {
-              // visibility: isVisible('mines-layer-2021')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2021"),
+            "line-opacity": getOpacity(`mines-layer-2021`),
             "line-width": 1,
           }}
         />
-        {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2020"}
           source={"mines-2020"}
           type="line"
-          layout={
-            {
-              //  visibility: isVisible('mines-layer-2020')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2020"),
+            "line-opacity": getOpacity(`mines-layer-2020`),
             "line-width": 1,
           }}
         />
-        {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2019"}
           source={"mines-2019"}
           type="line"
-          layout={
-            {
-              //  visibility: isVisible('mines-layer-2019')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2019"),
+            "line-opacity": getOpacity(`mines-layer-2019`),
             "line-width": 1,
           }}
         />
-        {/* @ts-ignore */}
         <Layer
           id={"mines-layer-2018"}
           source={"mines-2018"}
           type="line"
-          layout={
-            {
-              //  visibility: isVisible('mines-layer-2018')
-            }
-          }
           paint={{
             "line-color": "#ffb301",
-            "line-opacity": getOpacity("mines-layer-2018"),
+            "line-opacity": getOpacity(`mines-layer-2018`),
             "line-width": 1,
           }}
         />
-        <Source
-          id="amazon-cover-water"
-          type={"vector"}
-          url={"mapbox://mapbox.mapbox-streets-v8"}
-        />
+
+        { /* ================== LABELS =================== */}
         <Layer
           id="country-labels"
           type="symbol"
@@ -356,6 +416,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             "text-color": "#ffffff",
           }}
         />
+
+        { /* ================== POPUP =================== */}
         {popupVisible && popupInfo && (
           <Popup
             longitude={popupInfo?.longitude}
@@ -394,7 +456,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
               <CopyOutlined style={{ fontSize: "16px" }} /> Copy URL
             </a>
           </Popup>
+
         )}
+
         <div className="map-scale-control"></div>
       </Map>
 
@@ -403,27 +467,27 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           options={[
             {
               label: "2018",
-              value: "mines-layer-2018",
+              value: "2018",
             },
             {
               label: "2019",
-              value: "mines-layer-2019",
+              value: "2019",
             },
             {
               label: "2020",
-              value: "mines-layer-2020",
+              value: "2020",
             },
             {
               label: "2021",
-              value: "mines-layer-2021",
+              value: "2021",
             },
             {
               label: "2022",
-              value: "mines-layer-2022",
+              value: "2022",
             },
             {
               label: "2023",
-              value: "mines-layer-2023",
+              value: "2023",
             },
           ]}
           value={activeLayer}
@@ -441,24 +505,16 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           options={[
             {
               label: dictionary?.map_ui.latest,
-              value:
-                "https://api.maptiler.com/maps/satellite/style.json?key=LTYjFQeomRfetQbTCERa",
+              value: true,
             },
             {
               label: dictionary?.map_ui.hi_res,
-              value: "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
+              value: false,
             },
           ]}
-          value={mapStyle}
+          value={yearly}
           onChange={({ target: { value } }) => {
-            if (
-              value !== "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w"
-            ) {
-              setYearly(false);
-            } else {
-              setYearly(true);
-            }
-            setMapStyle(value);
+            setYearly(value);
           }}
           optionType="button"
           buttonStyle="solid"

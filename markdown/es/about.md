@@ -6,7 +6,7 @@ Todos los datos publicados en este sitio web están disponibles para su descarga
 
 La versión beta de la plataforma se lanzó en abril de 2022 y nuestro objetivo es seguir desarrollando funciones y capacidades analíticas, sacando a la luz conocimientos sobre el estado actual de la minería en la región amazónica.
 
-*Estos son algunos casos en los que la máquina puede identificar incorrectamente las zonas mineras. Estos son ejemplos de detecciones erróneas*
+_Estos son algunos casos en los que la máquina puede identificar incorrectamente las zonas mineras. Estos son ejemplos de detecciones erróneas_
 
 ![not-mines](/images/not-mines.png)
 
