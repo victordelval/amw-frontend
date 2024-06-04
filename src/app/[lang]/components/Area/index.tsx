@@ -13,7 +13,7 @@ interface AreaProps {
 
 // Define the interface for the coverage JSON structure
 interface CoverageYear {
-  km: number;
+  km: string;
   acres: number;
 }
 
