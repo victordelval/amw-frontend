@@ -30,9 +30,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [areaVisible, setAreaVisible] = useState(true);
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState();
-  const [mapStyle, setMapStyle] = useState(
-    "mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w",
-  );
   const [yearly, setYearly] = useState(true);
   const [activeLayer, setActiveLayer] = useState("2023");
 
@@ -115,7 +112,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           width: "100hw",
           height: "100vh",
         }}
-        mapStyle={mapStyle}
+        mapStyle={`mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w`}
         onMove={(e) => {
           if (map) {
             /* @ts-ignore */
@@ -536,7 +533,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         </a>
       </div>
 
-      {areaVisible && <Area dictionary={dictionary} />}
+      {areaVisible && <Area dictionary={dictionary} year={activeLayer} /> }
       {/* @ts-ignore */}
       {map && map?.getZoom() > 5 && (
         /* @ts-ignore */

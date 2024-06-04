@@ -47,15 +47,6 @@ export default function Loader(props: LoaderProps) {
     <div
       ref={loaderRef}
       className="loader"
-      style={{
-        position: "fixed",
-        left: 0,
-        top: 0,
-        background: "#003e36",
-        width: "100%",
-        height: "100%",
-        zIndex: 100000,
-      }}
     >
       <div className="content">
         <div>
