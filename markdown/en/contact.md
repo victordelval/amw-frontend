@@ -1,5 +1,6 @@
 # Contact
 
-If you would like to collaborate with the validation of data or have any story ideas, or suggestions to improve the code of this platform, please contact:
+If you have ideas for stories or other ways to use the data of this platform, please contact us: 
 
 <a class="amw-mail-link" href="mailtio:amazonmining@pulitzercenter.org">amazonmining@pulitzercenter.org</a>
+<a class="amw-mail-link" href="mailtio:info@earthgenome.org">info@earthgenome.org</a>
