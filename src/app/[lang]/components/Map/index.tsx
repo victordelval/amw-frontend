@@ -528,6 +528,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         >
           RIN
         </a>
+        <a className="ac-logo" href="https://www.amazonconservation.org/">
+          Amazon Conservation
+        </a>
         <a className="eg-logo" href="https://earthgenome.org/">
           Earth Genome
         </a>

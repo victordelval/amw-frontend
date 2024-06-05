@@ -158,6 +158,14 @@
   background: url("/images/rin-logo.png") no-repeat center center;
   background-size: contain;
 }
+.ac-logo {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 40px;
+  background: url("/images/ac-logo.png") no-repeat center center;
+  background-size: contain;
+}
 .eg-logo {
   display: inline-block;
   text-indent: -9999px;
