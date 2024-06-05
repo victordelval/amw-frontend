@@ -181,5 +181,5 @@
 }
 
 .ant-radio-button-wrapper:not(:first-child)::before {
-  height: 0px;
+  width: 0px !important;
 }
