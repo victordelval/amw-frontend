@@ -12,13 +12,17 @@ interface LoaderProps {
 export default function Loader(props: LoaderProps) {
   const { dictionary } = props;
   const [showLoader, setShowLoader] = useState(true);
+  const [fadeClass, setFadeClass] = useState('');
   const loaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setShowLoader(true);
     setTimeout(() => {
+      setFadeClass('fade-out')
+    }, 2000);
+    setTimeout(() => {
       setShowLoader(false);
-    }, 1500);
+    }, 2500);
   }, []);
 
   useEffect(() => {
@@ -46,7 +50,7 @@ export default function Loader(props: LoaderProps) {
   return showLoader ? (
     <div
       ref={loaderRef}
-      className="loader"
+      className={`loader ${fadeClass}`}
     >
       <div className="content">
         <div>

@@ -25,6 +25,9 @@
   font-size: 50px;
   font-weight: 900;
 }
+.area-km sup {
+  font-size: 18px;
+}
 .area-or {
   position: relative;
 }

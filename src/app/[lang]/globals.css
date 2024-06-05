@@ -20,6 +20,15 @@ h1 {
   margin-bottom: 20px;
 }
 
+.fade-in {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
 .case-study-images {
   position: absolute;
   left: -60%;
@@ -47,14 +56,14 @@ h1 {
 .amw-btn:hover {
   background: #22b573;
 }
-
 .amw-mail-link {
   font-size: 24px !important;
 }
-
 .slideshow {
   position: fixed;
   right: 800px;
   width: 300px;
   top: 200px;
 }
+
+
