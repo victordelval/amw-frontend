@@ -174,7 +174,7 @@
   background: url("/images/eg-logo.png") no-repeat center center;
   background-size: contain;
 }
-@media (max-width: 950px) {
+@media (max-width: 1150px) {
   .partners {
     display: none;
   }
