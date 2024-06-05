@@ -8,7 +8,6 @@ import Loader from "./components/Loader";
 import React from "react";
 import "./globals.css";
 import type { Metadata, ResolvingMetadata } from "next";
-import Transition from "./components/Transition";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 type Props = {

@@ -280,7 +280,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           type="line"
           source-layer="country_boundaries"
           paint={{
-            "line-color": "#999",
+            "line-color": "#777",
             "line-width": 0.5,
           }}
         />

@@ -6,12 +6,6 @@ All the data published on this website is available for download. Our hope is th
 
 The beta version of the platform was launched in April 2022, and our goal is to continue developing features and analytical capabilities, surfacing insights about the current state of mining in the Amazon region.
 
-_There are some cases where the network can incorrectly identify mined areas. Here are some examples of incorrect detections._
-![example](/images/not-mines.png)
-
 The Rainforest Investigations Network was created in 2020 by the Pulitzer Center to support investigative journalists in the three main rainforest regions: the Amazon, the Congo Basin, and Southeast Asia. In its two years of activity, the network has provided 25 fellowships to reporters investigating environmental crime, corruption, and the supply chains driving the destruction of forests.
-
-![recent](/images/img-1.jpg)
-![hi-res](/images/img-2.jpg)
 
 The Earth Genome is a nonprofit agency helping communicators and activists around the world to use satellite imagery and geospatial intelligence in their stories and campaigns. The organization has been looking at several cases of illegal mining in Brazil and Venezuela, and through this partnership with RIN is expanding its model to the entire Amazon region.
