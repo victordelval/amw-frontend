@@ -1,18 +1,13 @@
 # Sobre
 
-O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network (RIN) do Pulitzer Center e a Earthrise Media. Essas duas organizações sem fins lucrativos uniram forças para trazer juntas o poder da inteligência artificial e do jornalismo investigativo e elucidar problemas ambientais de grande escala na Amazônia.
+O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network (RIN) do Pulitzer Center, a Amazon Conservation e a Earth Genome. Essas organizações sem fins lucrativos uniram forças para trazer juntas o poder da inteligência artificial e da reportagem investigativo e elucidar problemas ambientais de grande escala na Amazônia.
 
-Todos os dados publicados neste site estão disponíveis para download. Nossa esperança é que jornalistas, ativistas e pesquisadores possam usar essas informações para melhor contextualizar e fornecer validação “da situação” observada nas imagens de satélite. Assim como no caso dos dados abertos, nosso compromisso com o software de código aberto e a transparência é central. A metodologia e as limitações desta plataforma estão totalmente descritas neste site e também podem ser acessadas via GitHub.
+Todos os dados publicados neste site e o código utilizado para gerá-los estão disponíveis para [download](https://github.com/earthrise-media/mining-detector). Nossa esperança é que jornalistas, ativistas e pesquisadores possam usar essas informações para melhor contextualizar e fornecer validação da situação observada nas imagens de satélite. A metodologia e as limitações desta plataforma estão descritas neste site e no GitHub.
 
-A versão beta da plataforma foi lançada em abril de 2022 e nosso objetivo é continuar desenvolvendo recursos e capacidades analíticas, trazendo entendimento sobre o estado atual da mineração na região amazônica.
+![RioHuaypetue](/images/rio-huaypetue.jpg)
 
-_Estes são alguns casos em que a máquina pode identificar incorretamente as áreas de mineração. Aqui exemplos de detecções erradas_
+A **RIN** foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
 
-![not-mines](/images/not-mines.png)
+**Amazon Conservation** lidera trabalhos de conservação com base científica desde 1999. Atualmente trabalha como uma aliança com organizações irmãs no Peru (ACCA) e na Bolívia (ACEAA) para trabalhos direcionados nesses países. Além disso, com o seu inovador programa MAAP baseado em satélite, a organização agora cobre todo o bioma Amazônico, com a especialidade de rastrear e abordar o desmatamento em tempo real com parceiros em cada país.
 
-A RIN foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
-
-![recent](/images/img-1.jpg)
-![hi-res](/images/img-2.jpg)
-
-A Earthrise Media é uma agência sem fins lucrativos que ajuda comunicadores e ativistas do mundo todo a usar imagens de satélite e inteligência geoespacial em suas histórias e campanhas. A organização vem analisando vários casos de mineração ilegal no Brasil e na Venezuela e, por meio dessa parceria com a RIN, está expandindo seu modelo para toda a região amazônica.
+**Earth Genome** é uma organização sem fins lucrativos que projeta e constrói com IA e dados terrestres para ajudar a orientar pesquisadores, formuladores de políticas e comunicadores para ações eficazes nas questões climáticas e de conservação mais urgentes de nossos tempos. Com base neste modelo de investigações na região amazônica e nos desenvolvimentos técnicos com o Earth Index, a organização está expandindo a detecção de mineração ilegal em todo o mundo.

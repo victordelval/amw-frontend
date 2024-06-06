@@ -1,11 +1,10 @@
 # Datos + código
 
-## Ejecución del código
+<a class="amw-btn" href="https://github.com/earthrise-media/mining-detector">Obtenga el código de  <b>Github</b></a>
 
-Este repositorio contiene todo el código necesario para generar datos, entrenar modelos y desplegar un modelo para predecir la presencia de minería en una región de interés. Si bien aceptamos el desarrollo y uso externo del código, sujeto a los términos de una licencia MIT abierta, la creación de conjuntos de datos y el despliegue del modelo requieren actualmente el acceso a la plataforma de Descartes Labs.
+El repositorio de GitHub contiene todo el código necesario para generar datos, entrenar modelos y desplegar un modelo para predecir la presencia de minería en una región de interés. Aceptamos el desarrollo y uso externo del código, sujeto a los términos de una [licencia MIT abierta](https://github.com/earthrise-media/mining-detector/blob/main/LICENSE).
 
-## Evaluación de la minería en la cuenca del Amazonas en 2020
+## Evaluaciones  anuales de la minería en la cuenca del Amazonas 2018-2023
 
-El mapa minero de la Amazonía y el conjunto de datos de salida en el que se basa el mapa, en formato GeoJSON.
+[Los datos de salida](https://github.com/earthrise-media/mining-detector/blob/main/data/outputs/44px_v2.9/mining_amazon_all_unified_thresh_0.8_v44px_v2.6-2.9_2020-01-01_2021-02-01_period_4_method_median.geojson) están disponibles en formato GeoJSON.
 
-<a class="amw-btn" href="https://github.com/earthrise-media/mining-detector">Get the code from <b>Github</b></a>
