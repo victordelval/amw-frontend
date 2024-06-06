@@ -1,16 +1,19 @@
 "use client";
 import ScaleBar from "../ScaleBar";
 import "./style.css";
+import coverageData from '../../../../../configs/coverage.json';
 
 interface FooterProps {
   zoom: number;
+  year?: string;
   dictionary?: { [key: string]: any };
 }
 
-const Footer: React.FC<FooterProps> = ({ zoom, dictionary }) => {
+const Footer: React.FC<FooterProps> = ({ zoom, year, dictionary }) => {
   return (
     <div className="footer">
-      <div className="mode"></div>
+      {/* @ts-ignore */}
+      <div className="mode">{ coverageData[year].acres} million acres / { coverageData[year].km} km<sup>2</sup></div>
       <div className="mining-legend">
         <div className="mine-swatch"></div>{" "}
         {dictionary?.map_ui.mining_areas_detected}

@@ -553,7 +553,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         <MiniMap bounds={bounds} />
       )}
       {/* @ts-ignore */}
-      <Footer zoom={map?.getZoom() || 4} dictionary={dictionary} />
+      <Footer year={activeLayer} zoom={map?.getZoom() || 4} dictionary={dictionary} />
     </div>
   );
 };

@@ -11,17 +11,17 @@
 }
 .footer .mode {
   position: absolute;
-  left: 0;
-  top: 0;
+  right: 200px;
   font-size: 11px;
   text-transform: uppercase;
-  width: 100%;
+  width: 340px;
   text-align: center;
-  top: 12px;
+  top: 8px;
+  font-weight: bold;
 }
 .mining-legend {
   color: #fff;
-  right: 290px;
+  right: 490px;
   top: 10px;
   font-size: 11px;
   position: absolute;
