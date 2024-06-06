@@ -55,31 +55,21 @@ export default function HowToUse(params: HowToUseParams) {
       >
         <CloseOutlined />
       </a>
-      <h2>{dictionary.how_to_use.title}</h2>
-      <p>{dictionary.how_to_use.description}</p>
       <Carousel dots={false} arrows {...settings}>
         <div>
           <div className="content">
-          <h2>Title</h2>
-          <p>Description</p>
-            <img src="/images/how-to-use-1.jpg" />
+          <h2>{dictionary.how_to_use.title}</h2>
+          <p>{dictionary.how_to_use.slide_1}</p>
+            <img src="/images/landslide.jpg" />
           </div>
         </div>
         <div>
           <div className="content">
-          <h2>Title</h2>
-          <p>Description</p>
-            <img src="/images/how-to-use-2.jpg" />
+          <h2>{dictionary.how_to_use.title}</h2>
+          <p>{dictionary.how_to_use.slide_2}</p>
+            <img src="/images/aquaculture.jpg" />
           </div>
-        </div>
-        <div>
-          <div className="content">
-          <h2>Title</h2>
-          <p>Description</p>
-            <img src="/images/how-to-use-3.jpg" />
-          </div>
-        </div>
-       
+        </div>  
       </Carousel>
     </div>
   );

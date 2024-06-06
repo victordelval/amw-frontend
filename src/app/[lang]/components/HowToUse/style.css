@@ -6,7 +6,7 @@
   max-width: 320px;
   z-index: 10000;
   border-radius: 5px;
-  padding: 20px 40px 20px 40px;
+  padding: 0 40px 20px 40px;
 }
 .how-to-use h2 {
   margin: 20px 0 10px 0;

@@ -46,6 +46,7 @@
   },
   "how_to_use": {
     "title": "How to use",
-    "description": "Detected mines are delineated by the yellow stroke. Here are some characteristic examples of mines from the map."
+    "slide_1": "Occasionally the system picks up phenomena that are NOT MINES. Here is an example of a landslide.",
+    "slide_2": "Occasionally the system picks up phenomena that are NOT MINES. Here is an example of aquaculture ponds."
   }
 }
