@@ -163,7 +163,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2018"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
@@ -171,7 +174,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2019"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
@@ -179,7 +185,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2020"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
@@ -187,7 +196,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2021"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
@@ -195,7 +207,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2022"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
@@ -203,7 +218,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           id="sentinel-2023"
           type="raster"
           tiles={[
-            `${process.env.NEXT_PUBLIC_SENTINEL2_URL}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_1}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_2}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_3}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
+            `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.png`,
           ]}
           tileSize={256}
         />
