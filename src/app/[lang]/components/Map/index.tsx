@@ -141,6 +141,11 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         onClick={(e) => {
           const { lngLat } = e;
           const map = e.target;
+          const features = map.queryRenderedFeatures(e.point);
+          const clickedOnExcludedLayer = features.some(
+            (feature) => feature.layer.id === 'hole-layer'
+          );
+          if (!clickedOnExcludedLayer) {
           popupVisible ? setPopupVisible(false) : setPopupVisible(true);
           setPopupInfo({
             /* @ts-ignore */
@@ -149,6 +154,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             longitude: lngLat.lng,
             zoom: map?.getZoom(),
           });
+         }
         }}
       >
 
