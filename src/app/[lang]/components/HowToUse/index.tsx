@@ -60,16 +60,22 @@ export default function HowToUse(params: HowToUseParams) {
       <Carousel dots={false} arrows {...settings}>
         <div>
           <div className="content">
+          <h2>Title</h2>
+          <p>Description</p>
             <img src="/images/how-to-use-1.jpg" />
           </div>
         </div>
         <div>
           <div className="content">
+          <h2>Title</h2>
+          <p>Description</p>
             <img src="/images/how-to-use-2.jpg" />
           </div>
         </div>
         <div>
           <div className="content">
+          <h2>Title</h2>
+          <p>Description</p>
             <img src="/images/how-to-use-3.jpg" />
           </div>
         </div>
