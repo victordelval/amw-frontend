@@ -38,7 +38,7 @@ const Area: React.FC<AreaProps> = ({ dictionary, year }) => {
         <div className="area-title">
           {dictionary.coverage.area_affected_in} {year}
         </div>
-        <div className="area-km">{ coverage?.[year].km } km</div>
+        <div className="area-km">{ coverage?.[year].km } km<sup>2</sup></div>
         <div className="area-or">
           <span className="area-line-left"></span>
           {dictionary.coverage.or}

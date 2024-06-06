@@ -32,6 +32,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [bounds, setBounds] = useState();
   const [yearly, setYearly] = useState(true);
   const [activeLayer, setActiveLayer] = useState("2023");
+  const [mapStyle, setMapStyle] = useState('mapbox://styles/earthrise/clvwchqxi06gh01pe1huv70id')
 
   useEffect(() => {
     if (window.location.hash) {
@@ -112,7 +113,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           width: "100hw",
           height: "100vh",
         }}
-        mapStyle={`mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w`}
+        mapStyle={mapStyle}
         onMove={(e) => {
           if (map) {
             /* @ts-ignore */
@@ -280,7 +281,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           type="line"
           source-layer="country_boundaries"
           paint={{
-            "line-color": "#999",
+            "line-color": "#777",
             "line-width": 0.5,
           }}
         />
@@ -512,6 +513,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           value={yearly}
           onChange={({ target: { value } }) => {
             setYearly(value);
+            if (value === false) {
+              setMapStyle(`mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w`);
+            }
           }}
           optionType="button"
           buttonStyle="solid"
@@ -528,6 +532,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         >
           RIN
         </a>
+        <a className="ac-logo" href="https://www.amazonconservation.org/">
+          Amazon Conservation
+        </a>
         <a className="eg-logo" href="https://earthgenome.org/">
           Earth Genome
         </a>
@@ -539,10 +546,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         /* @ts-ignore */
         <MiniMap bounds={bounds} />
       )}
-      {map && (
-        /* @ts-ignore */
-        <Footer zoom={map?.getZoom()} dictionary={dictionary} />
-      )}
+      {/* @ts-ignore */}
+      <Footer zoom={map?.getZoom() || 4} dictionary={dictionary} />
     </div>
   );
 };

@@ -11,3 +11,4 @@ The **Rainforest Investigations Network** was created in 2020 by the Pulitzer Ce
 **Amazon Conservation** has been leading science-based conservation work since 1999. It currently works as an Alliance with sister organizations in Peru (ACCA) and Bolivia (ACEAA) for targeted work in those countries. In addition, with its innovative satellite-based MAAP program, the organization now covers the entire Amazon biome, with a specialty of tracking and addressing deforestation in real-time with partners in each country.
 
 **Earth Genome** is a nonprofit that designs and builds with AI and earth data to help guide researchers, policy makers, and communicators to effective actions on the most pressing climate and conservation issues of our times. Building on this model of investigations in the Amazon region, and technical developments with Earth Index, the organization is expanding detection of illegal mining throughout the entire world.
+

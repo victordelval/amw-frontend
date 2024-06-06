@@ -158,6 +158,14 @@
   background: url("/images/rin-logo.png") no-repeat center center;
   background-size: contain;
 }
+.ac-logo {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 40px;
+  background: url("/images/ac-logo.png") no-repeat center center;
+  background-size: contain;
+}
 .eg-logo {
   display: inline-block;
   text-indent: -9999px;
@@ -166,12 +174,12 @@
   background: url("/images/eg-logo.png") no-repeat center center;
   background-size: contain;
 }
-@media (max-width: 950px) {
+@media (max-width: 1150px) {
   .partners {
     display: none;
   }
 }
 
 .ant-radio-button-wrapper:not(:first-child)::before {
-  height: 0px;
+  width: 0px !important;
 }

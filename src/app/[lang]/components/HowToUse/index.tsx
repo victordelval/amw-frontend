@@ -73,11 +73,7 @@ export default function HowToUse(params: HowToUseParams) {
             <img src="/images/how-to-use-3.jpg" />
           </div>
         </div>
-        <div>
-          <div className="content">
-            <img src="/images/how-to-use-4.jpg" />
-          </div>
-        </div>
+       
       </Carousel>
     </div>
   );
