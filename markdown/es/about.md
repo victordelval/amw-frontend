@@ -2,9 +2,9 @@
 
 Amazon Mining Watch es una asociación entre la Red de Investigaciones de los Bosques Tropicales (RIN) del Centro Pulitzer, Amazon Conservation, y Earth Genome. Estas organizaciones sin fines de lucro han unido fuerzas para aprovechar el poder del aprendizaje automático y los informes de investigación con el objetivo de arrojar luz sobre los problemas medioambientales a gran escala en la Amazonía.
 
-Todos los datos publicados en este sitio web y el código utilizado para generarlos están disponibles para [descargar] (https://github.com/earthrise-media/mining-detector). Esperamos que periodistas, activistas e investigadores puedan utilizar esta información para contextualizarla mejor y brindar validación sobre el terreno. La metodología y las limitaciones de esta plataforma se describen en este sitio y en GitHub.
+Todos los datos publicados en este sitio web y el código utilizado para generarlos están disponibles para [descargar](https://github.com/earthrise-media/mining-detector). Esperamos que periodistas, activistas e investigadores puedan utilizar esta información para contextualizarla mejor y brindar validación sobre el terreno. La metodología y las limitaciones de esta plataforma se describen en este sitio y en GitHub.
 
-![RioHuaypetue](/images/rio-huaypetue.jpg)
+## Los socios
 
 La **RIN** fue creada en 2020 por el Centro Pulitzer para apoyar a periodistas de investigación en las tres principales regiones de bosque tropical: la Amazonía, la cuenca del Congo y el sudeste asiático. En sus dos años de actividad, la red ha concedido 25 becas a reporteros que investigan delitos medioambientales, corrupción y cadenas de suministro que promueven la destrucción de bosques.
 

@@ -4,7 +4,7 @@ O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network 
 
 Todos os dados publicados neste site e o código utilizado para gerá-los estão disponíveis para [download](https://github.com/earthrise-media/mining-detector). Nossa esperança é que jornalistas, ativistas e pesquisadores possam usar essas informações para melhor contextualizar e fornecer validação da situação observada nas imagens de satélite. A metodologia e as limitações desta plataforma estão descritas neste site e no GitHub.
 
-![RioHuaypetue](/images/rio-huaypetue.jpg)
+## Os parceiros
 
 A **RIN** foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
 

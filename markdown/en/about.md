@@ -4,7 +4,7 @@ Amazon Mining Watch is a partnership between the Pulitzer Center's Rainforest In
 
 All the data published on this website and the code used to generate it are available for [download](https://github.com/earthrise-media/mining-detector). Our hope is that journalists, activists, and researchers can use this information to better contextualize it and provide on-the-ground validation. The methodology and the limitations of this platform are described on this site and on GitHub.
 
-![RioHuaypetue](/images/rio-huaypetue.jpg)
+## The partners
 
 The **Rainforest Investigations Network** was created in 2020 by the Pulitzer Center to support investigative journalists in the three main rainforest regions: the Amazon, the Congo Basin, and Southeast Asia. In its two years of activity, the network has provided 25 fellowships to reporters investigating environmental crime, corruption, and the supply chains driving the destruction of forests.
 
