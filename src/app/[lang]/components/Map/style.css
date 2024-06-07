@@ -183,3 +183,6 @@
 .ant-radio-button-wrapper:not(:first-child)::before {
   width: 0px !important;
 }
+.mapboxgl-canvas {
+  background-color: transparent !important;
+}

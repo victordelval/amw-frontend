@@ -32,8 +32,10 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
   const [bounds, setBounds] = useState();
   const [yearly, setYearly] = useState(true);
   const [activeLayer, setActiveLayer] = useState("2023");
-  /* 'mapbox://styles/earthrise/clvwchqxi06gh01pe1huv70id' */
-  const [mapStyle, setMapStyle] = useState('mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w')
+  /*  
+  mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w
+  */
+  const [mapStyle, setMapStyle] = useState('mapbox://styles/earthrise/clvwchqxi06gh01pe1huv70id')
 
   useEffect(() => {
     if (window.location.hash) {
@@ -51,6 +53,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
       }
     }
   }, [map]);
+
 
   const updateURLHash = () => {
     /* @ts-ignore */
