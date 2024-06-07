@@ -543,6 +543,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             setYearly(value);
             if (value === false) {
               setMapStyle(`mapbox://styles/earthrise/ckxht1jfm2h9k15m7wrv5wz5w`);
+            } else {
+              setMapStyle('mapbox://styles/earthrise/clvwchqxi06gh01pe1huv70id');
             }
           }}
           optionType="button"
