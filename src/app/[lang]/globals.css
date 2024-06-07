@@ -19,7 +19,6 @@ h1 {
   font-size: 60px;
   margin-bottom: 20px;
 }
-
 .fade-in {
   opacity: 1;
   transition: opacity 500ms ease-in-out;
@@ -28,7 +27,6 @@ h1 {
   opacity: 0;
   transition: opacity 500ms ease-in-out;
 }
-
 .case-study-images {
   position: absolute;
   left: -60%;
