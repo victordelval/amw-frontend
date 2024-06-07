@@ -6,9 +6,10 @@ import { i18n } from "../i18n-config";
 export function middleware(request: NextRequest) {
   const cookie = request.cookies.get("NEXT_LOCALE");
   const cookieLocale = cookie?.value;
-
   const pathname = request.nextUrl.pathname;
-  //console.log(`Request Pathname: ${pathname}`);
+
+  //console.log("Middleware running for:", pathname);
+  //console.log("Current NEXT_LOCALE cookie:", cookieLocale);
 
   // Exclude static assets and API routes from locale redirection
   if (
@@ -16,49 +17,39 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api/") ||
     pathname.match(/\.(jpg|jpeg|png|gif|ico|geojson|json|svg|css|js)$/)
   ) {
-    //console.log('Path is for static asset or API route. Skipping locale redirection.');
     return NextResponse.next();
   }
 
   // Determine if the pathname includes a supported locale
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
-  //console.log(`Pathname Is Missing Locale: ${pathnameIsMissingLocale}`);
+
+  console.log("Pathname is missing locale:", pathnameIsMissingLocale);
 
   if (pathnameIsMissingLocale) {
-    // Use the cookie locale if available; otherwise, fall back to a default locale
     const preferredLocale = cookieLocale || i18n.defaultLocale;
-    //console.log(`Redirecting to Preferred Locale: ${preferredLocale}`);
+    console.log("Redirecting to preferred locale:", preferredLocale);
 
     // Redirect to the preferred locale
     const response = NextResponse.redirect(
-      new URL(
-        `/${preferredLocale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url,
-      ),
+      new URL(`/${preferredLocale}${pathname}`, request.url)
     );
 
-    // If the locale comes from cookie (user preference), no need to set it again
-    if (!cookieLocale) {
-      // Set the locale in a cookie for future requests
-      //console.log(`Setting Cookie for Locale: ${preferredLocale}`);
-      response.cookies.set("NEXT_LOCALE", preferredLocale, {
-        path: "/",
-        maxAge: 60 * 60 * 24 * 365,
-      });
-    }
+    // Set the locale in a cookie for future requests
+    response.cookies.set("NEXT_LOCALE", preferredLocale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+    });
 
     return response;
   } else if (cookieLocale && !pathname.startsWith(`/${cookieLocale}`)) {
-    // If there's a cookie locale that doesn't match the current path's locale, consider updating the cookie.
-    //console.log(`Cookie Locale and Path Locale Do Not Match. Current Path: ${pathname}`);
     const currentLocale = i18n.locales.find((locale) =>
-      pathname.startsWith(`/${locale}`),
+      pathname.startsWith(`/${locale}`)
     );
     if (currentLocale) {
-      //console.log(`Updating Cookie to Current Locale: ${currentLocale}`);
+      console.log("Updating cookie to current locale:", currentLocale);
       const response = NextResponse.next();
       response.cookies.set("NEXT_LOCALE", currentLocale, {
         path: "/",
@@ -68,8 +59,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Proceed without modification if the request already includes a locale
-  //console.log('Proceeding without modification.');
+  console.log("Proceeding without modification.");
   return NextResponse.next();
 }
 
