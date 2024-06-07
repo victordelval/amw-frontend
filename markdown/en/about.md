@@ -6,7 +6,7 @@ All the data published on this website and the code used to generate it are avai
 
 ## The partners
 
-The **Rainforest Investigations Network** was created in 2020 by the Pulitzer Center to support investigative journalists in the three main rainforest regions: the Amazon, the Congo Basin, and Southeast Asia. In its two years of activity, the network has provided 25 fellowships to reporters investigating environmental crime, corruption, and the supply chains driving the destruction of forests.
+The **Rainforest Investigations Network** was created in 2020 by the Pulitzer Center to support investigative journalists in the three main rainforest regions: the Amazon, the Congo Basin, and Southeast Asia. In its four years of activity, the network has provided 55 fellowships to reporters investigating environmental crime, corruption, and the supply chains driving the destruction of forests.
 
 **Amazon Conservation** has been leading science-based conservation work since 1999. It currently works as an Alliance with sister organizations in Peru (ACCA) and Bolivia (ACEAA) for targeted work in those countries. In addition, with its innovative satellite-based MAAP program, the organization now covers the entire Amazon biome, with a specialty of tracking and addressing deforestation in real-time with partners in each country.
 

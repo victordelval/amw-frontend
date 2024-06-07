@@ -9,7 +9,7 @@ images:
 
 # Estudios de caso
 
-Este trabajo surgió de una serie de colaboraciones con periodistas y activistas que buscaban exponer la minería ilegal del oro y documentar sus impactos en el medio ambiente y las comunidades locales.
+Este trabajo surgió de una serie de colaboraciones con periodistas y activistas que buscaban exponer la minería ilegal del oro y documentar sus impactos en el medio ambiente y las comunidades cercanas.
 
 Un [archivo](https://github.com/earthrise-media/mining-detector#journalism) completo está en Github.
 

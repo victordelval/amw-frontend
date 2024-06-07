@@ -39,7 +39,7 @@
   },
   "map_ui": {
     "loading": "cargando",
-    "latest": "Recientes",
+    "latest": "Anual",
     "hi_res": "Hi-Res",
     "map_mode": "OPCIÓN DE MAPA",
     "mining_areas_detected": "Zona minera detectada"
@@ -50,8 +50,11 @@
     "million_acres": "millones de acres"
   },
   "how_to_use": {
-    "title": "How to use",
-    "slide_1": "Occasionally the system picks up phenomena that are NOT MINES. Here is an example of a landslide.",
-    "slide_2": "Occasionally the system picks up phenomena that are NOT MINES. Here is an example of aquaculture ponds."
+    "title": "Cómo usar",
+    "slide_1": "Las minas detectadas están delimitadas por el trazo amarillo. Aquí hay algunos ejemplos característicos de minas del mapa.",
+    "slide_2": "Las minas detectadas están delimitadas por el trazo amarillo. Aquí hay algunos ejemplos característicos de minas del mapa.",
+    "slide_3": "Las minas detectadas están delimitadas por el trazo amarillo. Aquí hay algunos ejemplos característicos de minas del mapa.",
+    "slide_landslides": "Ocasionalmente, el sistema detecta características del paisaje que NO SON MINAS. Estos son deslizamientos de tierra en terrenos escarpados.",
+    "slide_aquaculture": "Ocasionalmente, el sistema detecta características del paisaje que NO SON MINAS. Estos son estanques de acuicultura."
   }
 }
