@@ -6,7 +6,7 @@ Todos los datos publicados en este sitio web y el código utilizado para generar
 
 ## Los socios
 
-La **RIN** fue creada en 2020 por el Centro Pulitzer para apoyar a periodistas de investigación en las tres principales regiones de bosque tropical: la Amazonía, la cuenca del Congo y el sudeste asiático. En sus dos años de actividad, la red ha concedido 25 becas a reporteros que investigan delitos medioambientales, corrupción y cadenas de suministro que promueven la destrucción de bosques.
+La **RIN** fue creada en 2020 por el Centro Pulitzer para apoyar a periodistas de investigación en las tres principales regiones de bosque tropical: la Amazonía, la cuenca del Congo y el sudeste asiático. En sus cuatro años de actividad, la red ha concedido 55 becas a reporteros que investigan delitos medioambientales, corrupción y cadenas de suministro que promueven la destrucción de bosques.
 
 **Amazon Conservation** ha liderado el trabajo de conservación con base científica desde 1999. Actualmente trabaja como una alianza con organizaciones hermanas en Perú (ACCA) y Bolivia (ACEAA) para trabajos específicos en esos países. Además, con su innovador programa MAAP basado en satélites, la organización ahora cubre todo el bioma amazónico, con la especialidad de rastrear y abordar la deforestación en tiempo real con socios en cada país.
 

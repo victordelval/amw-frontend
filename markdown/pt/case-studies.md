@@ -9,7 +9,7 @@ images:
 
 # Estudos de Caso
 
-Este trabalho se originou de uma série de colaborações com jornalistas e ativistas que buscavam expor a atividade ilegal do garimpo e documentar seus impactos no meio ambiente e nas comunidades locais.
+Este trabalho se originou de uma série de colaborações com jornalistas e ativistas que buscavam expor a atividade ilegal do garimpo e documentar seus impactos no meio ambiente e nas comunidades próximas.
 
 Um [arquivo](https://github.com/earthrise-media/mining-detector#journalism) completo está disponível no Github.
 

@@ -6,7 +6,7 @@ Todos os dados publicados neste site e o código utilizado para gerá-los estão
 
 ## Os parceiros
 
-A **RIN** foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus dois anos de atividade, a rede concedeu 25 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
+A **RIN** foi criada em 2020 pelo Pulitzer Center para apoiar jornalistas investigativos nas três principais regiões de floresta tropical: a Amazônia, a Bacia do Congo e o Sudeste Asiático. Em seus quatro anos de atividade, a rede concedeu 55 bolsas a repórteres que investigam crimes ambientais, corrupção e as cadeias de suprimentos que impulsionam a destruição de florestas.
 
 **Amazon Conservation** lidera trabalhos de conservação com base científica desde 1999. Atualmente trabalha como uma aliança com organizações irmãs no Peru (ACCA) e na Bolívia (ACEAA) para trabalhos direcionados nesses países. Além disso, com o seu inovador programa MAAP baseado em satélite, a organização agora cobre todo o bioma Amazônico, com a especialidade de rastrear e abordar o desmatamento em tempo real com parceiros em cada país.
 

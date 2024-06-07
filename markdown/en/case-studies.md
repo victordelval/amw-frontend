@@ -9,11 +9,11 @@ images:
 
 # Case Studies
 
-This work grew out of a series of collaborations with journalists and with activists seeking to expose illegal gold-mining activity and document its impacts on the environment and on local communities.
+This work grew out of a series of collaborations with journalists and with activists seeking to expose illegal gold-mining activity and document its impacts on the environment and on nearby communities.
 
 A full [archive](https://github.com/earthrise-media/mining-detector#journalism) is on Github.
 
-## Select reporting
+## Selected reporting
 
 - The series _Corredor Furtivo_ investigates dissident guerilla elements driving gold mining operations in Venezuela and resistance from indigenous communities along the Colombian border. [From _Armando.Info_](https://armando.info/series/corredor-furtivo/) and [_El País_](https://elpais.com/internacional/2022-01-30/las-pistas-clandestinas-que-bullen-en-la-selva-venezolana.html), produced in conjunction with the Pulitzer Center's Rainforest Investigation Network.
 
