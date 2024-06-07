@@ -15,14 +15,19 @@ interface NavProps {
   dictionary: { [key: string]: any };
 }
 
+const getLocaleFromPathname = (pathname: string) => {
+  const localeMatch = pathname.match(/^\/(en|es|pt)/);
+  return localeMatch ? localeMatch[1] : 'en'; // default to 'en' if no match
+};
+
 const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
   const pathname = usePathname();
+  const locale =  getLocaleFromPathname(pathname);
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState("");
   const [showHowToUse, setShowHowToUse] = useState(false);
   const { menuOpen, setMenuOpen } = useMenu();
   const menuRef = useRef<HTMLUListElement>(null); // Ref for the menu to animate
-
   const isRootPath = /^\/(en|es|pt)?\/?$/.test(pathname);
 
   useEffect(() => {
@@ -35,7 +40,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
             xPercent: 0,
             duration: 0.8,
             stagger: 0.07,
-            ease: "back.out(1.4)", //
+            ease: "back.out(1.4)",
           },
         );
       } else {
@@ -72,7 +77,7 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
 
           <Link
             className="menu-link"
-            href="/about"
+            href={`/${locale}/about`}
             onClick={() => {
               setShowMenu(false);
               setMenuOpen(false);
@@ -162,24 +167,24 @@ const Nav: React.FC<NavProps> = ({ children, dictionary }) => {
                 }}
               >
                 <li>
-                  <Link href="/">{dictionary.menu.map}</Link>
+                  <Link href={`/${locale}`}>{dictionary.menu.map}</Link>
                 </li>
                 <li>
-                  <Link href="/about">{dictionary.menu.about}</Link>
+                  <Link href={`/${locale}/about`}>{dictionary.menu.about}</Link>
                 </li>
                 <li>
-                  <Link href="/case-studies">
+                  <Link href={`/${locale}/case-studies`}>
                     {dictionary.menu.case_studies}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/methodology">{dictionary.menu.methodology}</Link>
+                  <Link href={`/${locale}/methodology`}>{dictionary.menu.methodology}</Link>
                 </li>
                 <li>
-                  <Link href="/code">{dictionary.menu.data_and_code}</Link>
+                  <Link href={`/${locale}/code`}>{dictionary.menu.data_and_code}</Link>
                 </li>
                 <li>
-                  <Link href="/contact">{dictionary.menu.contact}</Link>
+                  <Link href={`/${locale}/contact`}>{dictionary.menu.contact}</Link>
                 </li>
               </ul>
               <ul className="lang-menu">

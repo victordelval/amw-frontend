@@ -60,8 +60,8 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
     const zoom = map?.getZoom();
     /* @ts-ignore */
     const center = map?.getCenter();
-    const lng = center.lng;
-    const lat = center.lat;
+    const lng = center?.lng;
+    const lat = center?.lat;
     router.replace(
       `${pathname}/#${zoom.toFixed(2)}/${lng.toFixed(2)}/${lat.toFixed(2)}`,
       undefined,
