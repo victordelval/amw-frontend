@@ -1,6 +1,6 @@
 # Sobre
 
-O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network (RIN) do Pulitzer Center, a Amazon Conservation e a Earth Genome. Essas organizações sem fins lucrativos uniram forças para trazer juntas o poder da inteligência artificial e da reportagem investigativo e elucidar problemas ambientais de grande escala na Amazônia.
+O Amazon Mining Watch é uma parceria entre a Rainforest Investigations Network (RIN) do Pulitzer Center, a Amazon Conservation e a Earth Genome. Essas organizações sem fins lucrativos uniram forças para trazer juntas o poder da inteligência artificial e da reportagem investigativa e elucidar problemas ambientais de grande escala na Amazônia.
 
 Todos os dados publicados neste site e o código utilizado para gerá-los estão disponíveis para [download](https://github.com/earthrise-media/mining-detector). Nossa esperança é que jornalistas, ativistas e pesquisadores possam usar essas informações para melhor contextualizar e fornecer validação da situação observada nas imagens de satélite. A metodologia e as limitações desta plataforma estão descritas neste site e no GitHub.
 

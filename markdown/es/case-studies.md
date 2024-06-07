@@ -16,7 +16,7 @@ Un [archivo](https://github.com/earthrise-media/mining-detector#journalism) comp
 
 ## Reportajes seleccionados
 
-- La serie _Corredor Furtivo_ investiga elementos guerrilleros disidentes que dirigen operaciones mineras de oro en Venezuela y la resistencia de las comunidades indígenas a lo largo de la frontera con Colombia. [De Armando.Info](https://armando.info/series/corredor-furtivo/) y _[El País](https://elpais.com/internacional/2022-01-30/las-pistas-clandestinas-que-bullen-en-la-selva-venezolana.html)_, producido en conjunto con la Red de Investigación de la Selva Tropical del Centro Pulitzer.
+- La serie _Corredor Furtivo_ investiga elementos guerrilleros disidentes que dirigen operaciones mineras de oro en Venezuela y la resistencia de las comunidades indígenas a lo largo de la frontera con Colombia. [De Armando.Info](https://armando.info/series/corredor-furtivo/) y _[El País](https://elpais.com/internacional/2022-01-30/las-pistas-clandestinas-que-bullen-en-la-selva-venezolana.html)_, producido en conjunto con la Red de Investigaciones de los Bosques Tropicales del Centro Pulitzer.
 
 - "As pistas da destruição" informa sobre los aeródromos ilícitos y los pilotos que abastecen los yacimientos de oro brasileños y trafican con oro. [De _The Intercept_](https://theintercept.com/2022/08/02/amazonia-pistas-clandestinas-garimpo/), con un artículo complementario [en _The New York Times_](https://www.nytimes.com/interactive/2022/08/02/world/americas/brazil-airstrips-illegal-mining.html).
 
