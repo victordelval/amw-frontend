@@ -513,6 +513,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         <div className="map-scale-control"></div>
       </Map>
 
+     { yearly &&
       <div className="year-pills">
         <Radio.Group
           options={[
@@ -549,7 +550,9 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           buttonStyle="solid"
         />
       </div>
+      }
 
+      { yearly &&
       <div className="year-dropdown">
         <ConfigProvider
         theme={{
@@ -592,6 +595,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         </Select>
         </ConfigProvider>
       </div>
+     }
 
       <div className="imagery-pills">
         <Radio.Group
