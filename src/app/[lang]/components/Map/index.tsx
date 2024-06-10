@@ -177,7 +177,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2018-01-01/2019-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
         <Source
           id="sentinel-2019"
@@ -189,7 +189,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2019-01-01/2020-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
         <Source
           id="sentinel-2020"
@@ -201,7 +201,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2020-01-01/2021-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
         <Source
           id="sentinel-2021"
@@ -213,7 +213,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2021-01-01/2022-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
         <Source
           id="sentinel-2022"
@@ -225,7 +225,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2022-01-01/2023-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
         <Source
           id="sentinel-2023"
@@ -237,7 +237,7 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
             `${process.env.NEXT_PUBLIC_SENTINEL2_URL_4}/2023-01-01/2024-01-01/rgb/{z}/{x}/{y}.webp`,
           ]}
           tileSize={256}
-          bounds={[-118.0, -55.0, -34.0, 33.0]}
+          bounds={[-80.0, -20.0, -50.0, 20.0]}
         />
 
         { /* ================== SENTINEL2 LAYERS =================== */}
