@@ -17,7 +17,8 @@
 @media (max-width: 600px) {
   .intro {
     width: 80%;
-    top: 40%;
+    top: 50%;
+    
   }
 }
 .overlay .content .intro h1 {
@@ -36,7 +37,7 @@
 }
 @media (max-width: 600px) {
   .overlay .intro p {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .intro .btn {

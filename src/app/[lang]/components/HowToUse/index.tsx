@@ -62,22 +62,22 @@ export default function HowToUse(params: HowToUseParams) {
           <p>{dictionary.how_to_use.slide_1}</p>
             <img src="/images/how-to-use-1.jpg" />
           </div>
-        </div>
-	<div>
+         </div>
+	        <div>
           <div className="content">
           <h2>{dictionary.how_to_use.title}</h2>
           <p>{dictionary.how_to_use.slide_2}</p>
             <img src="/images/how-to-use-2.jpg" />
           </div>
         </div>
-	<div>
+	        <div>
           <div className="content">
           <h2>{dictionary.how_to_use.title}</h2>
           <p>{dictionary.how_to_use.slide_3}</p>
             <img src="/images/how-to-use-3.jpg" />
           </div>
         </div>
-	<div>
+	        <div>
           <div className="content">
           <h2>{dictionary.how_to_use.title}</h2>
           <p>{dictionary.how_to_use.slide_landslides}</p>

@@ -5,3 +5,8 @@
   width: 200px;
   height: 150px;
 }
+@media (max-width: 600px) {
+  .mini-map {
+  right: 0px;
+  }
+}

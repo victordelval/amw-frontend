@@ -8,6 +8,13 @@
   border-radius: 5px;
   padding: 0 40px 20px 40px;
 }
+@media(max-width: 600px) {
+  .how-to-use {
+    right: auto;
+    left: 30px;
+    max-width: 200px;
+  }
+}
 .how-to-use h2 {
   margin: 20px 0 10px 0;
   color: #fff;
@@ -27,12 +34,22 @@
   inset-inline-end: -10px !important;
   margin-top: 0 !important;
 }
+@media(max-width: 600px) {
+  .how-to-use .slick-next {
+    inset-inline-end: -25px !important;
+  }
+}
 .how-to-use .slick-prev {
   color: #fff !important;
   font-size: 18px !important;
   inset-inline-start: -5px !important;
   z-index: 100;
   margin-top: 0 !important;
+}
+@media(max-width: 600px) {
+  .how-to-use .slick-prev {
+    inset-inline-start: -30px !important;
+  }
 }
 .how-to-use img {
   width: 100%;

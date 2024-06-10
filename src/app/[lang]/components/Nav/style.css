@@ -28,13 +28,14 @@
 .amw-logo {
   position: fixed;
   top: 50px;
-  left: 30px;
+  left: 40px;
   z-index: 1000;
   display: block;
 }
 @media (max-width: 900px) {
   .amw-logo {
-    top: 60px;
+    left: 10px;
+    top: 40px;
   }
 }
 .amw-logo img {
@@ -43,8 +44,8 @@
 }
 @media (max-width: 900px) {
   .amw-logo img {
-    width: 90px;
-    height: 100px;
+    width: 70px;
+    height: 60px;
   }
 }
 .main-menu {
