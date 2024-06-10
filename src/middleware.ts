@@ -27,7 +27,6 @@ export function middleware(request: NextRequest) {
   );
 
   //console.log("Pathname is missing locale:", pathnameIsMissingLocale);
-
   if (pathnameIsMissingLocale) {
     const preferredLocale = cookieLocale || i18n.defaultLocale;
     //console.log("Redirecting to preferred locale:", preferredLocale);
