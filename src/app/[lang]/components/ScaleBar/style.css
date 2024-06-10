@@ -9,12 +9,22 @@
   border: none !important;
   width: 310px !important;
 }
+@media (max-width: 600px) {
+  .mapboxgl-ctrl-scale {
+  right: 20px;
+  }
+}
 .scale {
   position: fixed;
   width: 120px;
   border-bottom: 1px solid #fff;
   bottom: 14px;
   right: 50px;
+}
+@media (max-width: 600px) {
+  .scale {
+  right: 20px;
+  }
 }
 .scale .scale-left {
   position: absolute;
