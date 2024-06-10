@@ -536,8 +536,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         />
       </div>
       
-
-      { yearly &&
       <div className="year-dropdown">
         <ConfigProvider
         theme={{
@@ -580,7 +578,6 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
         </Select>
         </ConfigProvider>
       </div>
-     }
 
       <div className="imagery-pills">
         <Radio.Group
