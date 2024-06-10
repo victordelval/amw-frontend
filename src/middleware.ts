@@ -26,11 +26,11 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  console.log("Pathname is missing locale:", pathnameIsMissingLocale);
+  //console.log("Pathname is missing locale:", pathnameIsMissingLocale);
 
   if (pathnameIsMissingLocale) {
     const preferredLocale = cookieLocale || i18n.defaultLocale;
-    console.log("Redirecting to preferred locale:", preferredLocale);
+    //console.log("Redirecting to preferred locale:", preferredLocale);
 
     // Redirect to the preferred locale
     const response = NextResponse.redirect(
@@ -49,7 +49,7 @@ export function middleware(request: NextRequest) {
       pathname.startsWith(`/${locale}`)
     );
     if (currentLocale) {
-      console.log("Updating cookie to current locale:", currentLocale);
+     // console.log("Updating cookie to current locale:", currentLocale);
       const response = NextResponse.next();
       response.cookies.set("NEXT_LOCALE", currentLocale, {
         path: "/",
@@ -59,7 +59,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  console.log("Proceeding without modification.");
+  //console.log("Proceeding without modification.");
   return NextResponse.next();
 }
 
