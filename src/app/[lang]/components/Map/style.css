@@ -123,9 +123,22 @@
 }
 @media (max-width: 600px) {
   .year-pills {
-    top: 105px;
+    display: none;
   }
 }
+.year-dropdown {
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  z-index: 1000;
+  display: none;
+}
+@media(max-width: 600px) {
+  .year-dropdown {
+  display: block;
+  }
+}
+
 .partners {
   position: fixed;
   left: 20px;
@@ -179,7 +192,6 @@
     display: none;
   }
 }
-
 .ant-radio-button-wrapper:not(:first-child)::before {
   width: 0px !important;
 }

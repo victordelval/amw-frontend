@@ -2,7 +2,7 @@
 import "./style.css";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { message, Button, Radio, Slider } from "antd";
+import { message, Button, Radio, Slider, Select, ConfigProvider } from "antd";
 import Map, { Layer, Source, Popup, ScaleControl } from "react-map-gl";
 import { useMenu } from "../../menuContext";
 import Overlay from "../Overlay";
@@ -11,6 +11,7 @@ import Footer from "../Footer";
 import MiniMap from "../MiniMap";
 import { convertBoundsToGeoJSON } from "./helpers";
 import { CopyOutlined } from "@ant-design/icons";
+const { Option } = Select;
 
 interface MainMapProps {
   dictionary: { [key: string]: any };
@@ -523,6 +524,49 @@ const MainMap: React.FC<MainMapProps> = ({ dictionary }) => {
           optionType="button"
           buttonStyle="solid"
         />
+      </div>
+
+      <div className="year-dropdown">
+        <ConfigProvider
+        theme={{
+          "components": {
+          "Select": {
+            "selectorBg": "rgb(11, 95, 58)",
+            "optionSelectedColor": "rgba(242, 236, 236, 0.88)",
+            "colorIconHover": "rgba(250, 246, 246, 0.88)",
+            "colorBgContainer": "rgb(11, 95, 58)",
+            "colorBgElevated": "rgb(11, 95, 58)",
+            "colorPrimary": "rgb(242, 237, 237)",
+            "colorIcon": "rgb(255,255,255)",
+            "colorBorder": "rgb(6, 89, 36)",
+            "optionSelectedBg": "rgb(76, 97, 77)",
+            "colorText": "rgba(250, 249, 249, 0.88)",
+            "colorFillTertiary": "rgba(242, 234, 234, 0.04)",
+            "colorFillSecondary": "rgba(241, 228, 228, 0.06)",
+            "colorTextQuaternary": "rgba(249, 249, 249, 0.25)",
+            "colorTextTertiary": "rgba(244, 236, 236, 0.9)",
+            "colorTextDescription": "rgba(255, 253, 253, 0.45)",
+            "colorTextDisabled": "rgba(239, 233, 233, 0.25)",
+            "colorTextPlaceholder": "rgba(255, 255, 255, 0.9)",
+          }
+         }
+        }}
+        >
+        <Select
+         style={{ width: '100px'}}
+         value={activeLayer}
+         onChange={(value) => {
+          setActiveLayer(value);
+        }}
+        >
+          <Option value={2023}>2023</Option>
+          <Option value={2022}>2022</Option>
+          <Option value={2021}>2021</Option>
+          <Option value={2020}>2020</Option>
+          <Option value={2019}>2019</Option>
+          <Option value={2018}>2018</Option>
+        </Select>
+        </ConfigProvider>
       </div>
 
       <div className="imagery-pills">
