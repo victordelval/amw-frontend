@@ -11,6 +11,13 @@ Content is pulled from markdown files in `./markdown`.
 
 Interface translations are stored in `./dictionaries`.
 
+## Deploy 
+
+To create a production build:
+
+- Ensure you have created an `.env` file and populated it with the required env vars.
+- Run `yarn build` to create a production build.
+
 ## Developers
 
 Rename env-example.txt to .env and add your env values.
