@@ -8,7 +8,9 @@ import Loader from "./components/Loader";
 import React from "react";
 import "./globals.css";
 import type { Metadata, ResolvingMetadata } from "next";
+import GoogleAnalytics from './components/Tracking';
 import "mapbox-gl/dist/mapbox-gl.css";
+
 
 type Props = {
   params: { lang: "en" | "es" | "pt" };
@@ -43,6 +45,7 @@ export default async function RootLayout({
   return (
     <html lang={params.lang}>
       <AntdRegistry>
+      <GoogleAnalytics />
         <MenuProvider>
           <body>
             <Nav dictionary={dictionary} />
