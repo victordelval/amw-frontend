@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "yarn playwright test",
+    "test:ui": "yarn playwright test --ui",
+    "test:report": "yarn playwright show-report"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.1",
@@ -36,6 +39,7 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.2",
     "@types/js-cookie": "^3.0.6",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
